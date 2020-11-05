@@ -15,55 +15,62 @@ namespace Tingle
     {
 
         MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;user id=root; password =;database=historico; Convert Zero Datetime=True");
-        MySqlCommand cmd;
-        MySqlDataAdapter adapter;
-        
-        
+
         public Registro()
         {
             InitializeComponent();
             pbIconePassword.BackgroundImage = Properties.Resources.Lock2;
             pbIconeUsername.BackgroundImage = Properties.Resources.User1;
             pbIconeEmail.BackgroundImage = Properties.Resources.Email2;
-            
+
         }
-
-        //CODE
-
-        
-        private void cadastrar()
-        {
-            validarUsuario();
-
-            connection.Open();
-
-           var f = "INSERT INTO funcionario (nome, cargo, email, senha, cpf)" 
-                   + "VALUES(@NOME, @CARGO, @EMAIL, @SENHA, @CPF), connection)";
-
-            var cmd = new MySqlCommand(f, connection);
-
-            cmd.Parameters.AddWithValue("@NOME", this.txtUsername.Text);
-            cmd.Parameters.AddWithValue("@EMAIL", this.txtEmail.Text);
-            cmd.Parameters.AddWithValue("@CARGO", this.txtCargo.Text);    
-            cmd.Parameters.AddWithValue("@SENHA", this.txtPassword.Text);
-            cmd.Parameters.AddWithValue("@RG", this.txtCPF.Text);
-
-            limparCampos();
-
-            connection.Close();
-        }  
-        
-
-        //DESIGN FORM
-
         private void Registro_Load(object sender, EventArgs e)
         {
 
         }
 
+        //CODE
+        private void cadastrar()
+        {
+            validarCampos();
+            try
+            {
+                connection.Open();
+                var f = "INSERT INTO funcionario (nome, cargo, email, senha, cpf)"
+                    + "VALUES(@NOME, @CARGO, @EMAIL, @SENHA, @CPF), connection)";
+
+                var cmd = new MySqlCommand(f, connection);
+
+                cmd.Parameters.AddWithValue("@NOME", this.txtUsername.Text);
+                cmd.Parameters.AddWithValue("@EMAIL", this.txtEmail.Text);
+                cmd.Parameters.AddWithValue("@CARGO", this.txtCargo.Text);
+                cmd.Parameters.AddWithValue("@SENHA", this.txtPassword.Text);
+                cmd.Parameters.AddWithValue("@RG", this.txtCPF.Text);
+
+                MessageBox.Show("Funcinoário registrado!", "Ok");
+
+                limparCampos();
+            }
+            
+            catch
+            {
+                MessageBox.Show("Erro de conexão!", "Information");
+            }
+            
+            finally
+            {
+                connection.Close();
+            }
+    }
+
+        //DESIGN FORM
         private void button2_Click(object sender, EventArgs e)
         {
             var newForm = new Login();
+            newForm.Show();
+            this.Hide();
+
+            newForm.FormClosed += (s, args) => this.Close();
             newForm.Show();
         }
 
@@ -72,7 +79,7 @@ namespace Tingle
             this.Close();
         }
 
-        private bool validarUsuario()
+        private bool validarCampos()
         {
             if (this.txtEmail.Text.ToString().Equals(String.Empty))
             {
