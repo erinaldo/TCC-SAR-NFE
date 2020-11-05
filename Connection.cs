@@ -12,7 +12,6 @@ namespace Tingle
     class Connection
     {
         MySql.Data.MySqlClient.MySqlConnection conn;
-        string myConnectionString;
         static string host = "localhost";
         static string database = "historico";
         static string userDB = "root";

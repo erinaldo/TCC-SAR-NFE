@@ -335,7 +335,7 @@
             this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
             this.vScrollBar1.Location = new System.Drawing.Point(981, 0);
             this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(21, 752);
+            this.vScrollBar1.Size = new System.Drawing.Size(21, 750);
             this.vScrollBar1.TabIndex = 387;
             // 
             // label58
@@ -1470,7 +1470,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1002, 752);
+            this.ClientSize = new System.Drawing.Size(1002, 750);
             this.Controls.Add(this.label63);
             this.Controls.Add(this.label62);
             this.Controls.Add(this.label61);

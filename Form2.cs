@@ -58,6 +58,14 @@ namespace Tingle
             //Abre conexão MySQL
             connection.Open();
 
+            //Insert ALL
+            var all = "INSERT INTO completa(nNF, Dest_CNPJ, Dest_xNome, Dest_xLgr, Dest_xBairro, Dest_xMun, Dest_UF, Dest_CEP, Dest_fone, Dest_IE," +
+                " dEmit, dRecbto, hRecbto, " +
+                "CNPJ, Emit_xNome, Emit_xLgr, Emit_xBairro, Emit_xMun, Emit_UF, Emit_CEP, Emit_fone, Emit_IE, Emit_nro, " +
+                "vBc, vICMS, vBCTS, vProd, vFrete, vSeg, vDesc, vIPI, vOutro, vNF, " +
+                "Transp_CNPJ, Transp_xNome, Transp_xLgr, Transp_xMun, Transp_UF, Transp_IE, qVol, esp, funId)"
+
+
             //Insert Tabela Destinatário
             var dest = "Insert INTO destinatario(nNF, CNPJ, xNome, xLgr, xBairro, xMun, UF, CEP, fone, IE, dEmit, dRecbto, hRecbto)"
                           + "VALUES(@nNF, @CNPJ, @xNome, @xLgr, @xBairro, @xMun, @UF, @CEP, @fone, @IE, @dEmit, @dRecbto, @hRecbto)";

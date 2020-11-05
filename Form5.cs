@@ -14,7 +14,9 @@ namespace Tingle
     public partial class Login : Form
     {
         string nome, senha;
-
+        int codigo;
+        MySqlDataAdapter dataAdapter;
+        DataTable dataTable; 
         public Login()
         {
             InitializeComponent();
@@ -70,13 +72,14 @@ namespace Tingle
                     if (txtUsername.Text != "" && txtPassword.Text != "")
                     {
                         con.Open();
-                        string query = "SELECT nome, senha FROM funcionario WHERE nome ='" + txtUsername.Text + "' AND password ='" + txtPassword.Text + "'";
+                        string query = "SELECT cod_fun, nome, senha FROM funcionario WHERE nome ='" + txtUsername.Text + "' AND password ='" + txtPassword.Text + "'";
                         MySqlDataReader row;
                         row = con.ExecuteReader(query);
                         if (row.HasRows)
                         {
                             while (row.Read())
                             {
+                                codigo = (int)row["cod_fun"];
                                 nome = row["nome"].ToString();
                                 senha = row["senha"].ToString();
 
