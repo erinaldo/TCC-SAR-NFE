@@ -23,11 +23,12 @@ namespace Tingle
         MySqlDataAdapter adapter;
         DataTable dt;
         DataSet ds;
+        private int codigo;
 
-        public Histórico()
+        public Histórico(int codigo)
         {
             InitializeComponent();
-
+            this.codigo = codigo;
 
             pastaimg = Application.StartupPath + @"\";
 
@@ -54,7 +55,6 @@ namespace Tingle
             listView1.Columns.Add("Horas Recebida", 100);
 
         }
-
         private void consultar()
         {
 

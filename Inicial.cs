@@ -61,7 +61,7 @@ namespace Tingle
             
             hideSubMenu();
 
-            openChildForm(new Histórico());
+            openChildForm(new Histórico(this.codigo));;
         }
 
         private void button3_Click(object sender, EventArgs e)

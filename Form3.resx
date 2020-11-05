@@ -121,7 +121,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA7IAAAH0CAYAAAAAHhGsAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxIAAAsSAdLdfvwAAFZGSURBVHhe7d15kF11nf9/OntI
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxEAAAsRAX9kX5EAAFZGSURBVHhe7d15kF11nf9/OntI
         AkkI2ZNuy29pOWNpWfOd+X6/U9aUZZ1eQmfpLL0hDKKonbt0OumkO30bIQioLIIyMAzCMJivKGgG+Iog
         TBBTIFuQJZIfGlkmLIOOjo6KirKd3/t0umMneQX6JH3v+XzOef7xqPfNm9DLPfe+l9x7zzkmDEMAAAAA
         ALwhkwAAAAAAuEomAQAAAABwlUwCAAAAAOAqmQQAAAAAwFUyCQAAAACAq2QSAAAAAABXySQAAAAAAK6S
@@ -495,6 +495,9 @@
   </data>
   <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>58</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
