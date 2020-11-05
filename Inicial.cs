@@ -12,10 +12,11 @@ namespace Tingle
 {
     public partial class Inicial : Form
     {
-        public Inicial()
+        public Inicial(int codigo)
         {
             InitializeComponent();
-            custumizeDesing();
+            custumizeDesing(); 
+            this.codigo = codigo;
         }
 
         private void custumizeDesing()
@@ -52,7 +53,7 @@ namespace Tingle
         {
             hideSubMenu();
 
-            openChildForm(new NFe());
+            openChildForm(new NFe(this.codigo));
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -119,6 +120,8 @@ namespace Tingle
         }
 
         private Form activeForm = null;
+        private int codigo;
+
         private void openChildForm(Form childForm)
         {
             if (activeForm != null)

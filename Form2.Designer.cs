@@ -208,19 +208,23 @@
             // 
             // pbInserir
             // 
+            this.pbInserir.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pbInserir.Location = new System.Drawing.Point(661, 38);
             this.pbInserir.Name = "pbInserir";
             this.pbInserir.Size = new System.Drawing.Size(49, 28);
             this.pbInserir.TabIndex = 400;
             this.pbInserir.TabStop = false;
+            this.pbInserir.Click += new System.EventHandler(this.pbInserir_Click);
             // 
             // pbEnviar
             // 
+            this.pbEnviar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pbEnviar.Location = new System.Drawing.Point(801, 24);
             this.pbEnviar.Name = "pbEnviar";
             this.pbEnviar.Size = new System.Drawing.Size(145, 52);
             this.pbEnviar.TabIndex = 399;
             this.pbEnviar.TabStop = false;
+            this.pbEnviar.Click += new System.EventHandler(this.pbEnviar_Click);
             // 
             // label60
             // 

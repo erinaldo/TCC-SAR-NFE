@@ -13,9 +13,12 @@ namespace Tingle
 {
     public partial class NFe : Form
     {
-        public NFe()
+        private int codigo;
+
+        public NFe(int codigo)
         {
             InitializeComponent();
+            this.codigo = codigo;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -59,11 +62,70 @@ namespace Tingle
             connection.Open();
 
             //Insert ALL
-            var all = "INSERT INTO completa(nNF, Dest_CNPJ, Dest_xNome, Dest_xLgr, Dest_xBairro, Dest_xMun, Dest_UF, Dest_CEP, Dest_fone, Dest_IE," +
-                " dEmit, dRecbto, hRecbto, " +
-                "CNPJ, Emit_xNome, Emit_xLgr, Emit_xBairro, Emit_xMun, Emit_UF, Emit_CEP, Emit_fone, Emit_IE, Emit_nro, " +
-                "vBc, vICMS, vBCTS, vProd, vFrete, vSeg, vDesc, vIPI, vOutro, vNF, " +
-                "Transp_CNPJ, Transp_xNome, Transp_xLgr, Transp_xMun, Transp_UF, Transp_IE, qVol, esp, funId)"
+            var all = "INSERT INTO completa(nNF, Dest_CNPJ, Dest_xNome, Dest_xLgr, Dest_xBairro, Dest_xMun, Dest_UF, Dest_CEP, Dest_fone, Dest_IE," 
+                + " dEmit, dRecbto, hRecbto, " 
+                + "CNPJ, Emit_xNome, Emit_xLgr, Emit_xBairro, Emit_xMun, Emit_UF, Emit_CEP, Emit_fone, Emit_IE, Emit_nro, " 
+                + "vBc, vICMS, vBCTS, vProd, vFrete, vSeg, vDesc, vIPI, vOutro, vNF, " 
+                + "Transp_CNPJ, Transp_xNome, Transp_xLgr, Transp_xMun, Transp_UF, Transp_IE, qVol, esp, funId) " 
+                //Values
+                + "VALUES(@nNF, @Dest_CNPJ, @Dest_xNome, @Dest_xLgr, @Dest_xBairro, @Dest_xMun, @Dest_UF, @Dest_CEP, @Dest_fone, @Dest_IE, @dEmit, @dRecbto, @hRecbto, " +
+                "@CNPJ, @Emit_xNome, @Emit_xLgr, @Emit_xBairro, @Emit_xMun, @Emit_UF, @Emit_CEP, @Emit_fone, @Emit_IE, @Emit_nro, " +
+                "@vBc, @vICMS, @vBCTS, @vProd, @vFrete, @vSeg, @vDesc, @vIPI, @vOutro, @vNF, " +
+                "@Transp_CNPJ, @Transp_xNome, @Transp_xLgr, @Transp_xMun, @Transp_UF, @Transp_IE, @qVol, @esp, @funId)";
+
+            var comando = new MySqlCommand(all, connection);
+
+            //Dest
+            comando.Parameters.AddWithValue("@nNF", this.nNF.Text);
+            comando.Parameters.AddWithValue("@Dest_CNPJ", this.CNPJeCPFRtext.Text);
+            comando.Parameters.AddWithValue("@Dest_xNome", this.NomeRtxt.Text);
+            comando.Parameters.AddWithValue("@Dest_xLgr", this.Enderecotxt.Text);
+            comando.Parameters.AddWithValue("@Dest_xBairro", this.Bairrotxt.Text);
+            comando.Parameters.AddWithValue("@Dest_xMun", this.Municipiotxt.Text);
+            comando.Parameters.AddWithValue("@Dest_UF", this.UFtxt.Text);
+            comando.Parameters.AddWithValue("@Dest_CEP", this.CEPtxt.Text);
+            comando.Parameters.AddWithValue("@Dest_fone", this.Telefonetxt.Text);
+            comando.Parameters.AddWithValue("@Dest_IE", this.IEtxt.Text);
+            comando.Parameters.AddWithValue("@dEmit", this.DataEtxt.Text);
+            comando.Parameters.AddWithValue("@dRecbto", this.DataSaidatxt.Text);
+            comando.Parameters.AddWithValue("@hRecbto", this.HoraSaidatxt.Text);
+            
+            //Emit
+            comando.Parameters.AddWithValue("@CNPJ", this.CNPJeCPFtxt.Text);
+            comando.Parameters.AddWithValue("@Emit_xNome", this.IdentificaçãoEmitentetxt.Text);
+            comando.Parameters.AddWithValue("@Emit_xLgr", this.xLgrEmitente.Text);
+            comando.Parameters.AddWithValue("@Emit_xBairro", this.xBairroEmitente.Text);
+            comando.Parameters.AddWithValue("@Emit_xMun", this.xMunEmit.Text);
+            comando.Parameters.AddWithValue("@Emit_UF", this.UFemit.Text);
+            comando.Parameters.AddWithValue("@Emit_CEP", this.CEPemit.Text);
+            comando.Parameters.AddWithValue("@Emit_fone", this.foneEmitente.Text);
+            comando.Parameters.AddWithValue("@Emit_IE", this.IEtxt.Text);
+            comando.Parameters.AddWithValue("@Emit_nro", this.nroEmitente.Text);
+
+            //Imposto
+            comando.Parameters.AddWithValue("@vBC", this.Basetxt.Text);
+            comando.Parameters.AddWithValue("@vICMS", this.ICMStxt.Text);
+            comando.Parameters.AddWithValue("@vBCTS", this.BaseSTtxt.Text);
+            comando.Parameters.AddWithValue("@vProd", this.ValorTotalProdtxt.Text);
+            comando.Parameters.AddWithValue("@vFrete", this.Fretetxt.Text);
+            comando.Parameters.AddWithValue("@vSeg", this.Segurotxt.Text);
+            comando.Parameters.AddWithValue("@vDesc", this.Descontotxt.Text);
+            comando.Parameters.AddWithValue("@vIPI", this.PIStxt.Text);
+            comando.Parameters.AddWithValue("@vOutro", this.Despesastxt.Text);
+            comando.Parameters.AddWithValue("@vNF", this.ValorTotalNotatxt.Text);
+
+            //Transp
+            comando.Parameters.AddWithValue("@Transp_CNPJ", this.CNPJTtxt.Text);
+            comando.Parameters.AddWithValue("@Transp_xNome", this.NomeTtxt.Text);
+            comando.Parameters.AddWithValue("@Transp_xLgr", this.EnderecoTtxt.Text);
+            comando.Parameters.AddWithValue("@Transp_xMun", this.MunicipioTtxt.Text);
+            comando.Parameters.AddWithValue("@Transp_UF", this.UFTtxt.Text);
+            comando.Parameters.AddWithValue("@Transp_IE", this.IETtxt.Text);
+            comando.Parameters.AddWithValue("@qVol", this.Quantidadetxt.Text);
+            comando.Parameters.AddWithValue("@esp", this.Especietxt.Text);
+            
+            //Funcionario
+            comando.Parameters.AddWithValue("@funId", codigo);
 
 
             //Insert Tabela Destinatário
@@ -182,18 +244,21 @@ namespace Tingle
             cmd5.Parameters.AddWithValue("@vNF", this.ValorTotalNotatxt.Text);
 
             //Executa os parâmetros
+            comando.ExecuteNonQuery();
             cmd.ExecuteNonQuery();
             cmd2.ExecuteNonQuery();
             cmd3.ExecuteNonQuery();
             cmd5.ExecuteNonQuery();
 
             //Limpa os parâmetros
+            comando.Parameters.Clear();
             cmd.Parameters.Clear();
             cmd2.Parameters.Clear();
             cmd3.Parameters.Clear();
             cmd4.Parameters.Clear();
             cmd5.Parameters.Clear();
 
+            MessageBox.Show("Você registrou essa NFe!");
             //Fecha a conexão
             connection.Close();
 
@@ -259,9 +324,19 @@ namespace Tingle
             ChaveAcessotxt.Text = Nfe.XMLSchema.Tables["infProt"].Rows[0]["chNFe"].ToString();
 
             //Produtos
-
             //Pega todos os dados do produto do Esquema XML para exibir no DataGridView
             dgvProd.DataSource = Nfe.XMLSchema.Tables["prod"];
+        }
+
+        private void pbEnviar_Click(object sender, EventArgs e)
+        {
+            Insert();   
+        }
+
+        private void pbInserir_Click(object sender, EventArgs e)
+        {
+            OpenFile();
+            PopulationXML();
         }
     }
 }

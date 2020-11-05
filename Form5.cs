@@ -72,40 +72,42 @@ namespace Tingle
                     if (txtUsername.Text != "" && txtPassword.Text != "")
                     {
                         con.Open();
-                        string query = "SELECT cod_fun, nome, senha FROM funcionario WHERE nome ='" + txtUsername.Text + "' AND password ='" + txtPassword.Text + "'";
+                        string query = "SELECT cod_fun, nome, senha FROM funcionario WHERE nome ='" + txtUsername.Text + "' AND senha ='" + txtPassword.Text + "'";
                         MySqlDataReader row;
                         row = con.ExecuteReader(query);
                         if (row.HasRows)
                         {
                             while (row.Read())
                             {
-                                codigo = (int)row["cod_fun"];
                                 nome = row["nome"].ToString();
                                 senha = row["senha"].ToString();
+                                codigo = (int)row["cod_fun"];
 
-                                Inicial inicial = new Inicial();
-                                inicial.Show();
-                                this.Hide();
-
-                                inicial.FormClosed += (s, args) => this.Close();
-                                inicial.Show();
                             }
-                            MessageBox.Show("Bem-vindo " + nome);
+                            MessageBox.Show("Bem-vindo " + nome); 
+
+                            Inicial inicial = new Inicial(this.codigo);
+                            inicial.Show();
+                            this.Hide();
+
+                            inicial.FormClosed += (s, args) => this.Close();
+                            inicial.Show();
                         }
                         else
                         {
                             MessageBox.Show("Funcionário não registrado!", "Information");
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show("Nome do Funcionário ou senha em branco!", "Information");
-                    }
-                }
-                catch
+                
+                else
                 {
-                    MessageBox.Show("Erro de conexão!", "Information");
+                    MessageBox.Show("Nome do Funcionário ou senha em branco!", "Information");
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Erro de conexão!", "Information");
+            }
                 finally
                 {
                     con.Close();
