@@ -51,5 +51,15 @@ namespace Tingle
         {
             this.Close();
         }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

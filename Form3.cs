@@ -194,7 +194,12 @@ namespace Tingle
                 lvHistorico.GridLines = true;
                 pLview();*/
         }
-       
+
+        private void vScrollBar2_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
         /*private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             listView1.Groups.Add(new ListViewGroup("List item text",

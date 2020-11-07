@@ -58,6 +58,7 @@ namespace Tingle
         {
             var newForm = new Registro();
             newForm.Show();
+            this.Hide();
         }
 
         private void login()

@@ -158,6 +158,14 @@ namespace Tingle
             pbIconeEmail.BackgroundImage = Properties.Resources.Email1;
             panel3.BackColor = Color.WhiteSmoke;
             txtEmail.ForeColor = Color.WhiteSmoke;
+
+            pictureBox2.BackgroundImage = Properties.Resources.CPFS;
+            panel4.BackColor = Color.WhiteSmoke;
+            txtCPF.ForeColor = Color.WhiteSmoke;
+
+            pictureBox1.BackgroundImage = Properties.Resources.CargoS;
+            panel1.BackColor = Color.WhiteSmoke;
+            txtCargo.ForeColor = Color.WhiteSmoke;
         }
 
         private void textBox2_Click(object sender, EventArgs e)
@@ -175,6 +183,14 @@ namespace Tingle
             pbIconeEmail.BackgroundImage = Properties.Resources.Email1;
             panel3.BackColor = Color.WhiteSmoke;
             txtEmail.ForeColor = Color.WhiteSmoke;
+
+            pictureBox2.BackgroundImage = Properties.Resources.CPFS;
+            panel4.BackColor = Color.WhiteSmoke;
+            txtCPF.ForeColor = Color.WhiteSmoke;
+
+            pictureBox1.BackgroundImage = Properties.Resources.CargoS;
+            panel1.BackColor = Color.WhiteSmoke;
+            txtCargo.ForeColor = Color.WhiteSmoke;
         }
 
         private void textBox3_Click(object sender, EventArgs e)
@@ -191,6 +207,14 @@ namespace Tingle
             pbIconePassword.BackgroundImage = Properties.Resources.Lock1;
             panel2.BackColor = Color.WhiteSmoke;
             txtPassword.ForeColor = Color.WhiteSmoke;
+
+            pictureBox2.BackgroundImage = Properties.Resources.CPFS;
+            panel4.BackColor = Color.WhiteSmoke;
+            txtCPF.ForeColor = Color.WhiteSmoke;
+
+            pictureBox1.BackgroundImage = Properties.Resources.CargoS;
+            panel1.BackColor = Color.WhiteSmoke;
+            txtCargo.ForeColor = Color.WhiteSmoke;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -201,6 +225,54 @@ namespace Tingle
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtCPF_Click(object sender, EventArgs e)
+        {
+            txtCPF.Clear();
+            pictureBox2.BackgroundImage = Properties.Resources.CPF;
+            panel4.BackColor = Color.FromArgb(0, 134, 251);
+            txtCPF.ForeColor = Color.FromArgb(0, 134, 251);
+
+            pbIconeUsername.BackgroundImage = Properties.Resources.User1;
+            LinhaUsername.BackColor = Color.WhiteSmoke;
+            txtUsername.ForeColor = Color.WhiteSmoke;
+
+            pbIconePassword.BackgroundImage = Properties.Resources.Lock1;
+            panel2.BackColor = Color.WhiteSmoke;
+            txtPassword.ForeColor = Color.WhiteSmoke;
+
+            pbIconeEmail.BackgroundImage = Properties.Resources.Email1;
+            panel3.BackColor = Color.WhiteSmoke;
+            txtEmail.ForeColor = Color.WhiteSmoke;
+
+            pictureBox1.BackgroundImage = Properties.Resources.CargoS;
+            panel1.BackColor = Color.WhiteSmoke;
+            txtCargo.ForeColor = Color.WhiteSmoke;
+        }
+
+        private void txtCargo_Click(object sender, EventArgs e)
+        {
+            txtCargo.Clear();
+            pictureBox1.BackgroundImage = Properties.Resources.Cargo;
+            panel1.BackColor = Color.FromArgb(0, 134, 251);
+            txtCargo.ForeColor = Color.FromArgb(0, 134, 251);
+
+            pbIconeUsername.BackgroundImage = Properties.Resources.User1;
+            LinhaUsername.BackColor = Color.WhiteSmoke;
+            txtUsername.ForeColor = Color.WhiteSmoke;
+
+            pbIconePassword.BackgroundImage = Properties.Resources.Lock1;
+            panel2.BackColor = Color.WhiteSmoke;
+            txtPassword.ForeColor = Color.WhiteSmoke;
+
+            pbIconeEmail.BackgroundImage = Properties.Resources.Email1;
+            panel3.BackColor = Color.WhiteSmoke;
+            txtEmail.ForeColor = Color.WhiteSmoke;
+
+            pictureBox2.BackgroundImage = Properties.Resources.CPFS;
+            panel4.BackColor = Color.WhiteSmoke;
+            txtCPF.ForeColor = Color.WhiteSmoke;
         }
     }
 }

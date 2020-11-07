@@ -41,7 +41,6 @@
             this.pbIconeUsername = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Logo = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtCargo = new System.Windows.Forms.TextBox();
@@ -54,7 +53,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbIconeUsername)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -62,10 +60,11 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(80)))), ((int)(((byte)(99)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(251)))));
-            this.button2.Location = new System.Drawing.Point(89, 623);
+            this.button2.Location = new System.Drawing.Point(89, 528);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(219, 34);
             this.button2.TabIndex = 23;
@@ -76,10 +75,11 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(251)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(80)))), ((int)(((byte)(99)))));
-            this.button1.Location = new System.Drawing.Point(89, 569);
+            this.button1.Location = new System.Drawing.Point(88, 488);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(219, 34);
             this.button1.TabIndex = 24;
@@ -165,7 +165,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(119, 665);
+            this.pictureBox4.Location = new System.Drawing.Point(110, 589);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(170, 37);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -183,19 +183,9 @@
             this.Logo.TabIndex = 1;
             this.Logo.TabStop = false;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::Tingle.Properties.Resources.X;
-            this.pictureBox5.Location = new System.Drawing.Point(390, 12);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 28;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::Tingle.Properties.Resources.CargoS;
             this.pictureBox1.Location = new System.Drawing.Point(49, 355);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 36);
@@ -221,6 +211,7 @@
             this.txtCargo.Size = new System.Drawing.Size(270, 19);
             this.txtCargo.TabIndex = 37;
             this.txtCargo.Text = "Cargo";
+            this.txtCargo.Click += new System.EventHandler(this.txtCargo_Click);
             // 
             // txtCPF
             // 
@@ -233,6 +224,7 @@
             this.txtCPF.Size = new System.Drawing.Size(270, 19);
             this.txtCPF.TabIndex = 37;
             this.txtCPF.Text = "CPF";
+            this.txtCPF.Click += new System.EventHandler(this.txtCPF_Click);
             // 
             // panel4
             // 
@@ -244,6 +236,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Image = global::Tingle.Properties.Resources.CPFS;
             this.pictureBox2.Location = new System.Drawing.Point(49, 425);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 36);
@@ -269,14 +262,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(80)))), ((int)(((byte)(99)))));
-            this.ClientSize = new System.Drawing.Size(427, 727);
+            this.ClientSize = new System.Drawing.Size(427, 638);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.txtCargo);
-            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pbIconeEmail);
             this.Controls.Add(this.pbIconePassword);
             this.Controls.Add(this.pbIconeUsername);
@@ -290,7 +282,7 @@
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.Logo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Registro";
@@ -304,7 +296,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbIconeUsername)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -326,7 +317,6 @@
         private System.Windows.Forms.Panel LinhaUsername;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtCargo;

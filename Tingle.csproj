@@ -39,6 +39,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -138,24 +139,6 @@
     <None Include="Resources\0086FB_Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\User.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Lock.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Email.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\UserS.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\EmailS.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\LockS.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\User1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +164,14 @@
     <Content Include="NewFile1.txt" />
     <Content Include="Properties\MySql.Data.dll" />
     <Content Include="Properties\NewFile1.txt" />
+    <None Include="Resources\CargoS.png" />
+    <None Include="Resources\Cargo.png" />
+    <None Include="Resources\CPFS.png" />
+    <None Include="Resources\CPF.png" />
+    <None Include="Resources\btBuscarEs.png" />
+    <None Include="Resources\btBuscar.png" />
+    <None Include="Resources\BtEnvEs.png" />
+    <None Include="Resources\BtEnv.png" />
     <None Include="Resources\historico.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
