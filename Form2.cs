@@ -343,5 +343,10 @@ namespace Tingle
         {
 
         }
+
+        private void pbInserir_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
