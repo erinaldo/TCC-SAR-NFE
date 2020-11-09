@@ -51,7 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connection.cs" />
+    <Compile Include="Classes\Connection.cs" />
+    <Compile Include="Classes\Imposto.cs" />
+    <Compile Include="Classes\Impostos\COFINS.cs" />
+    <Compile Include="Classes\Impostos\ICMS.cs" />
+    <Compile Include="Classes\Impostos\PIS.cs" />
+    <Compile Include="Classes\Impostos\Prod.cs" />
+    <Compile Include="Classes\Impostos\Total.cs" />
     <Compile Include="Inicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,7 +94,7 @@
     <Compile Include="Form6.Designer.cs">
       <DependentUpon>Form6.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nfe.cs" />
+    <Compile Include="Classes\Nfe.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Inicial.resx">
