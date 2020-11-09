@@ -129,3 +129,21 @@ C:\Users\renan\OneDrive\Desktop\Teste\obj\Debug\Tingle.csproj.CoreCompileInputs.
 C:\Users\renan\OneDrive\Desktop\Teste\obj\Debug\Tingle.csproj.CopyComplete
 C:\Users\renan\OneDrive\Desktop\Teste\obj\Debug\Tingle.exe
 C:\Users\renan\OneDrive\Desktop\Teste\obj\Debug\Tingle.pdb
+C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\bin\Debug\Tingle.exe.config
+C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\bin\Debug\Tingle.exe
+C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\bin\Debug\Tingle.pdb
+C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\bin\Debug\MySql.Data.dll
+C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\obj\Debug\Tingle.csprojAssemblyReference.cache
+C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\obj\Debug\Tingle.Inicial.resources
+C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\obj\Debug\Tingle.NFe.resources
+C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\obj\Debug\Tingle.Histórico.resources
+C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\obj\Debug\Tingle.Perfil.resources
+C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\obj\Debug\Tingle.Login.resources
+C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\obj\Debug\Tingle.Registro.resources
+C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\obj\Debug\Tingle.Properties.Resources.resources
+C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\obj\Debug\Tingle.csproj.GenerateResource.cache
+C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\obj\Debug\Tingle.csproj.CoreCompileInputs.cache
+C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\obj\Debug\Tingle.csproj.CopyComplete
+C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\obj\Debug\Tingle.exe
+C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\obj\Debug\Tingle.pdb
+C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\obj\Debug\Tingle.ChaveAcesso.resources

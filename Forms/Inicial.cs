@@ -61,17 +61,19 @@ namespace Tingle
             
             hideSubMenu();
 
-            openChildForm(new Histórico(this.codigo));;
+            openChildForm(new Histórico(this.codigo));
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            openChildForm(new ChaveAcesso(this.codigo));
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -91,12 +93,22 @@ namespace Tingle
         {
             hideSubMenu();
 
-            openChildForm(new Perfil());
+            openChildForm(new Perfil(this.codigo));
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
+            if (MessageBox.Show("Deseja encerrar a sessão?", "Voltar", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                Login login = new Login();
+                login.Show();
+                this.Hide();
+
+                login.FormClosed += (s, args) => this.Close();
+                login.Show();
+            }
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
