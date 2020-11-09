@@ -139,8 +139,11 @@
   <data name="btBuscarEs" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btBuscarEs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CPFS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CPFS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Cargo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cargo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CargoS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CargoS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="User1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\User1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,14 +151,17 @@
   <data name="Lock2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lock2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Lock1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lock1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="User2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\User2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Email2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Email2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Lock1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lock1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CPFS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CPFS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CPF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CPF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,10 +169,7 @@
   <data name="BtEnvEs" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtEnvEs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cargo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cargo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CargoS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CargoS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="voltarAzul" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voltarAzul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

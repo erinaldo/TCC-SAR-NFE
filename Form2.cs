@@ -19,6 +19,8 @@ namespace Tingle
         {
             InitializeComponent();
             this.codigo = codigo;
+            pbEnviar.BackgroundImage = Properties.Resources.BtEnv;
+            pbInserir.BackgroundImage = Properties.Resources.btBuscar;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -333,7 +335,7 @@ namespace Tingle
             Insert();   
         }
 
-        private void pbInserir_Click(object sender, EventArgs e)
+        private void pbInserir_Click_1(object sender, EventArgs e)
         {
             OpenFile();
             PopulationXML();
@@ -342,6 +344,31 @@ namespace Tingle
         private void label62_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pbInserir_MouseEnter(object sender, EventArgs e)
+        {
+            pbInserir.BackgroundImage = Properties.Resources.btBuscarEs;
+        }
+
+        private void pbInserir_MouseLeave(object sender, EventArgs e)
+        {
+            pbInserir.BackgroundImage = Properties.Resources.btBuscar;
+        }
+
+        private void pbEnviar_MouseEnter(object sender, EventArgs e)
+        {
+            pbEnviar.BackgroundImage = Properties.Resources.BtEnvEs;
+        }
+
+        private void pbEnviar_MouseLeave(object sender, EventArgs e)
+        {
+            pbEnviar.BackgroundImage = Properties.Resources.BtEnv;
+        }
+
+        private void pbVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

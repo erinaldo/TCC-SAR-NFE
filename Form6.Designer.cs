@@ -41,20 +41,20 @@
             this.pbIconeUsername = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Logo = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbCargo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtCargo = new System.Windows.Forms.TextBox();
             this.txtCPF = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pbCPF = new System.Windows.Forms.PictureBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconeEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconePassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconeUsername)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCargo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCPF)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -183,14 +183,13 @@
             this.Logo.TabIndex = 1;
             this.Logo.TabStop = false;
             // 
-            // pictureBox1
+            // pbCargo
             // 
-            this.pictureBox1.Image = global::Tingle.Properties.Resources.CargoS;
-            this.pictureBox1.Location = new System.Drawing.Point(49, 355);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 36);
-            this.pictureBox1.TabIndex = 39;
-            this.pictureBox1.TabStop = false;
+            this.pbCargo.Location = new System.Drawing.Point(49, 355);
+            this.pbCargo.Name = "pbCargo";
+            this.pbCargo.Size = new System.Drawing.Size(35, 36);
+            this.pbCargo.TabIndex = 39;
+            this.pbCargo.TabStop = false;
             // 
             // panel1
             // 
@@ -234,14 +233,13 @@
             this.panel4.Size = new System.Drawing.Size(308, 1);
             this.panel4.TabIndex = 38;
             // 
-            // pictureBox2
+            // pbCPF
             // 
-            this.pictureBox2.Image = global::Tingle.Properties.Resources.CPFS;
-            this.pictureBox2.Location = new System.Drawing.Point(49, 425);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 36);
-            this.pictureBox2.TabIndex = 39;
-            this.pictureBox2.TabStop = false;
+            this.pbCPF.Location = new System.Drawing.Point(49, 425);
+            this.pbCPF.Name = "pbCPF";
+            this.pbCPF.Size = new System.Drawing.Size(35, 36);
+            this.pbCPF.TabIndex = 39;
+            this.pbCPF.TabStop = false;
             // 
             // txtUsername
             // 
@@ -263,8 +261,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(80)))), ((int)(((byte)(99)))));
             this.ClientSize = new System.Drawing.Size(427, 638);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbCPF);
+            this.Controls.Add(this.pbCargo);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtCPF);
@@ -296,8 +294,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbIconeUsername)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCargo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCPF)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,12 +315,12 @@
         private System.Windows.Forms.Panel LinhaUsername;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbCargo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtCargo;
         private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pbCPF;
         private System.Windows.Forms.TextBox txtUsername;
     }
 }

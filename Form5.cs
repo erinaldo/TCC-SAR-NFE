@@ -63,6 +63,13 @@ namespace Tingle
 
         private void login()
         {
+            Inicial inicial = new Inicial(this.codigo);
+            inicial.Show();
+            this.Hide();
+
+            inicial.FormClosed += (s, args) => this.Close();
+            inicial.Show();
+            /*
             Connection con = new Connection();
             con.Open();
 
@@ -113,7 +120,7 @@ namespace Tingle
                 {
                     con.Close();
                 }
-            }
+            }*/
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {

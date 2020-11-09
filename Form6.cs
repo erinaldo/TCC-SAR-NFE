@@ -22,6 +22,8 @@ namespace Tingle
             pbIconePassword.BackgroundImage = Properties.Resources.Lock2;
             pbIconeUsername.BackgroundImage = Properties.Resources.User1;
             pbIconeEmail.BackgroundImage = Properties.Resources.Email2;
+            pbCargo.BackgroundImage = Properties.Resources.Cargo;
+            pbCPF.BackgroundImage = Properties.Resources.CPF;
 
         }
         private void Registro_Load(object sender, EventArgs e)
@@ -159,11 +161,11 @@ namespace Tingle
             panel3.BackColor = Color.WhiteSmoke;
             txtEmail.ForeColor = Color.WhiteSmoke;
 
-            pictureBox2.BackgroundImage = Properties.Resources.CPFS;
+            pbCPF.BackgroundImage = Properties.Resources.CPFS;
             panel4.BackColor = Color.WhiteSmoke;
             txtCPF.ForeColor = Color.WhiteSmoke;
 
-            pictureBox1.BackgroundImage = Properties.Resources.CargoS;
+            pbCargo.BackgroundImage = Properties.Resources.CargoS;
             panel1.BackColor = Color.WhiteSmoke;
             txtCargo.ForeColor = Color.WhiteSmoke;
         }
@@ -184,11 +186,11 @@ namespace Tingle
             panel3.BackColor = Color.WhiteSmoke;
             txtEmail.ForeColor = Color.WhiteSmoke;
 
-            pictureBox2.BackgroundImage = Properties.Resources.CPFS;
+            pbCPF.BackgroundImage = Properties.Resources.CPFS;
             panel4.BackColor = Color.WhiteSmoke;
             txtCPF.ForeColor = Color.WhiteSmoke;
 
-            pictureBox1.BackgroundImage = Properties.Resources.CargoS;
+            pbCargo.BackgroundImage = Properties.Resources.CargoS;
             panel1.BackColor = Color.WhiteSmoke;
             txtCargo.ForeColor = Color.WhiteSmoke;
         }
@@ -208,11 +210,11 @@ namespace Tingle
             panel2.BackColor = Color.WhiteSmoke;
             txtPassword.ForeColor = Color.WhiteSmoke;
 
-            pictureBox2.BackgroundImage = Properties.Resources.CPFS;
+            pbCPF.BackgroundImage = Properties.Resources.CPFS;
             panel4.BackColor = Color.WhiteSmoke;
             txtCPF.ForeColor = Color.WhiteSmoke;
 
-            pictureBox1.BackgroundImage = Properties.Resources.CargoS;
+            pbCargo.BackgroundImage = Properties.Resources.CargoS;
             panel1.BackColor = Color.WhiteSmoke;
             txtCargo.ForeColor = Color.WhiteSmoke;
         }
@@ -230,7 +232,7 @@ namespace Tingle
         private void txtCPF_Click(object sender, EventArgs e)
         {
             txtCPF.Clear();
-            pictureBox2.BackgroundImage = Properties.Resources.CPF;
+            pbCPF.BackgroundImage = Properties.Resources.CPF;
             panel4.BackColor = Color.FromArgb(0, 134, 251);
             txtCPF.ForeColor = Color.FromArgb(0, 134, 251);
 
@@ -246,7 +248,7 @@ namespace Tingle
             panel3.BackColor = Color.WhiteSmoke;
             txtEmail.ForeColor = Color.WhiteSmoke;
 
-            pictureBox1.BackgroundImage = Properties.Resources.CargoS;
+            pbCargo.BackgroundImage = Properties.Resources.CargoS;
             panel1.BackColor = Color.WhiteSmoke;
             txtCargo.ForeColor = Color.WhiteSmoke;
         }
@@ -254,7 +256,7 @@ namespace Tingle
         private void txtCargo_Click(object sender, EventArgs e)
         {
             txtCargo.Clear();
-            pictureBox1.BackgroundImage = Properties.Resources.Cargo;
+            pbCargo.BackgroundImage = Properties.Resources.Cargo;
             panel1.BackColor = Color.FromArgb(0, 134, 251);
             txtCargo.ForeColor = Color.FromArgb(0, 134, 251);
 
@@ -270,7 +272,7 @@ namespace Tingle
             panel3.BackColor = Color.WhiteSmoke;
             txtEmail.ForeColor = Color.WhiteSmoke;
 
-            pictureBox2.BackgroundImage = Properties.Resources.CPFS;
+            pbCPF.BackgroundImage = Properties.Resources.CPFS;
             panel4.BackColor = Color.WhiteSmoke;
             txtCPF.ForeColor = Color.WhiteSmoke;
         }

@@ -164,6 +164,7 @@
     <Content Include="NewFile1.txt" />
     <Content Include="Properties\MySql.Data.dll" />
     <Content Include="Properties\NewFile1.txt" />
+    <None Include="Resources\voltarAzul.png" />
     <None Include="Resources\CargoS.png" />
     <None Include="Resources\Cargo.png" />
     <None Include="Resources\CPFS.png" />

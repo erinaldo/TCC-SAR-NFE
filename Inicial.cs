@@ -15,11 +15,11 @@ namespace Tingle
         public Inicial(int codigo)
         {
             InitializeComponent();
-            custumizeDesing(); 
+            costumizeDesign(); 
             this.codigo = codigo;
         }
 
-        private void custumizeDesing()
+        private void costumizeDesign()
         {
             panelMediaSubmenu.Visible = false;
             panelPlaylistSubMenu.Visible = false;
