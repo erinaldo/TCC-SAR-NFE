@@ -26,6 +26,8 @@ namespace Tingle
         public ChaveAcesso(int codigo)
         {
             InitializeComponent();
+            pbOk.BackgroundImage = Properties.Resources.imgOk;
+
             this.codigo = codigo;
         }
 
@@ -174,12 +176,12 @@ namespace Tingle
 
         private void Ok_MouseMove(object sender, MouseEventArgs e)
         {
-            Ok.BackgroundImage = Properties.Resources.OkE;
+            pbOk.BackgroundImage = Properties.Resources.imgOkE;
         }
 
         private void Ok_MouseLeave_1(object sender, EventArgs e)
         {
-           Ok.BackgroundImage = Properties.Resources.Ok;
+           pbOk.BackgroundImage = Properties.Resources.imgOk;
         }
     }
 }

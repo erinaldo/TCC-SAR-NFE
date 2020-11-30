@@ -39,6 +39,7 @@ namespace Tingle
             pastaimg = System.Windows.Forms.Application.StartupPath + @"\";
 
             //Imagens
+            btExportar.BackgroundImage = Properties.Resources.btExportar;
             img_Voltar = Image.FromFile(pastaimg + "branco.png");
             img_EVoltar = Image.FromFile(pastaimg + "azul.png");
 

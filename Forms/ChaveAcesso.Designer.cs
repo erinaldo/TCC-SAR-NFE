@@ -32,9 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtURI = new System.Windows.Forms.TextBox();
-            this.Ok = new System.Windows.Forms.PictureBox();
+            this.pbOk = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Ok)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOk)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,18 +69,18 @@
             this.txtURI.Text = "\r\n";
             this.txtURI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtURI_KeyPress);
             // 
-            // Ok
+            // pbOk
             // 
-            this.Ok.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Ok.Location = new System.Drawing.Point(194, 155);
-            this.Ok.Name = "Ok";
-            this.Ok.Size = new System.Drawing.Size(78, 26);
-            this.Ok.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.Ok.TabIndex = 3;
-            this.Ok.TabStop = false;
-            this.Ok.Click += new System.EventHandler(this.btnWS_Click);
-            this.Ok.MouseLeave += new System.EventHandler(this.Ok_MouseLeave_1);
-            this.Ok.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Ok_MouseMove);
+            this.pbOk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbOk.Location = new System.Drawing.Point(194, 155);
+            this.pbOk.Name = "pbOk";
+            this.pbOk.Size = new System.Drawing.Size(78, 26);
+            this.pbOk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbOk.TabIndex = 3;
+            this.pbOk.TabStop = false;
+            this.pbOk.Click += new System.EventHandler(this.btnWS_Click);
+            this.pbOk.MouseLeave += new System.EventHandler(this.Ok_MouseLeave_1);
+            this.pbOk.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Ok_MouseMove);
             // 
             // ChaveAcesso
             // 
@@ -89,12 +89,12 @@
             this.ClientSize = new System.Drawing.Size(548, 406);
             this.Controls.Add(this.txtURI);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.Ok);
+            this.Controls.Add(this.pbOk);
             this.Controls.Add(this.label1);
             this.Name = "ChaveAcesso";
             this.Text = "ChaveAcesso";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Ok)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOk)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,6 +104,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox txtURI;
-        private System.Windows.Forms.PictureBox Ok;
+        private System.Windows.Forms.PictureBox pbOk;
     }
 }

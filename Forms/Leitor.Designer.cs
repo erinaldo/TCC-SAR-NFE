@@ -156,11 +156,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.IdentificaçãoEmitentetxt = new System.Windows.Forms.TextBox();
             this.pbVoltar = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbInserir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnviar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbVoltar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label63
@@ -1453,15 +1454,16 @@
             this.pbVoltar.TabStop = false;
             this.pbVoltar.Click += new System.EventHandler(this.pbVoltar_Click);
             // 
-            // button1
+            // pictureBox1
             // 
-            this.button1.Location = new System.Drawing.Point(11, 88);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 23);
-            this.button1.TabIndex = 404;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.pictureBox1.Image = global::Tingle.Properties.Resources.btP;
+            this.pictureBox1.Location = new System.Drawing.Point(24, 119);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(13, 14);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 405;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // NFe
             // 
@@ -1470,7 +1472,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1045, 749);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label63);
             this.Controls.Add(this.label62);
             this.Controls.Add(this.pbInserir);
@@ -1606,6 +1608,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbEnviar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbVoltar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1741,6 +1744,6 @@
         private System.Windows.Forms.Label label1;
         protected System.Windows.Forms.TextBox IdentificaçãoEmitentetxt;
         private System.Windows.Forms.PictureBox pbVoltar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

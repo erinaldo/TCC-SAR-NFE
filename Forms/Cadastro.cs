@@ -57,6 +57,13 @@ namespace Tingle
                 limparCampos();
                 MessageBox.Show("Funcionário registrado!", "Ok");
 
+                Login login = new Login();
+                login.Show();
+                this.Hide();
+
+                login.FormClosed += (s, args) => this.Close();
+                login.Show();
+
             }
 
             catch

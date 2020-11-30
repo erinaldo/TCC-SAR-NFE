@@ -21,9 +21,13 @@ namespace Tingle.Forms
         DataSet ds = new DataSet();
         private int _linhaIndice;
 
+
+
         public PerfilG(int codigo)
         {
             InitializeComponent();
+            pbExcluir.BackgroundImage = Properties.Resources.Excluir;
+            pbAlterar.BackgroundImage = Properties.Resources.Alterar;
             this.codigo = codigo;
 
         }
@@ -90,7 +94,7 @@ namespace Tingle.Forms
             if (string.IsNullOrEmpty(txtCPF.Text) || string.IsNullOrEmpty(txtNome.Text) ||
             string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtCargo.Text))
             {
-                MessageBox.Show("Selecione um registro para exclusão.");
+                MessageBox.Show("Selecione um registro para alterar.");
                 return;
             }
 
@@ -132,30 +136,25 @@ namespace Tingle.Forms
             //Connection con = new Connection();
             // con.Open();
 
-            adapter = new MySqlDataAdapter("SELECT * FROM funcionario WHERE cod_fun = '" + codigo + "'", connection);
+            adapter = new MySqlDataAdapter("SELECT nome, cargo, CPF, email FROM funcionario WHERE cod_fun = '" + codigo + "'", connection);
             adapter.Fill(dt);
 
-            lblNomeG.Text = dt.Rows[0][1].ToString();
-            lblCargoG.Text = dt.Rows[0][2].ToString();
+            lblNomeG.Text = dt.Rows[0][0].ToString();
+            lblCargoG.Text = dt.Rows[0][1].ToString();
             lblCPFG.Text = dt.Rows[0][2].ToString();
             lblEmailG.Text = dt.Rows[0][3].ToString();
 
-            /*var query = "SELECT * FROM funcionario WHERE cod_fun = '" + codigo + "'";
-            MySqlDataReader row;
-            row = con.ExecuteReader(query);
-            dt.Clear();
-            dt.Load(row);
-            if (row.HasRows)
-            {
-                while (row.Read())
-                {
-                    codigo = (int)row["cod_fun"];
-
-                }
-                Preencher();
-            }*/
         }
 
+
+        private void Limpar()
+        {
+            txtCargo.Clear();
+            txtNome.Clear();
+            txtCPF.Clear();
+            txtCodigo.Clear();
+            txtEmail.Clear();
+        }
 
         //Carrega os dados do DataGridView
         private void LoadDGV()
@@ -163,8 +162,6 @@ namespace Tingle.Forms
             try
             {
                 connection.Open();
-                //MySqlCommand cmd = new MySqlCommand("SELECT * FROM funcionario ", connection);
-
             }
             catch (Exception ex)
             {
@@ -190,12 +187,10 @@ namespace Tingle.Forms
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            Alterar();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            Excluir();
         }
         
         //Seleciona o conteúdo e passa para a textbox
@@ -217,9 +212,82 @@ namespace Tingle.Forms
             txtNome.Text = rowData.Cells[1].Value.ToString();
             txtCargo.Text = rowData.Cells[2].Value.ToString();
             txtCPF.Text = rowData.Cells[4].Value.ToString();
-            txtEmail.Text = rowData.Cells[3].Value.ToString();
+            txtEmail.Text = rowData.Cells[5].Value.ToString();
             
         }
 
+        private void pbExcluir_Click(object sender, EventArgs e)
+        {
+            Excluir();
+            Limpar();
+        }
+
+        private void pbAlterar_Click(object sender, EventArgs e)
+        {
+            Alterar();
+            Limpar();
+        }
+
+        private void pbExcluir_MouseMove(object sender, MouseEventArgs e)
+        {
+           pbExcluir.BackgroundImage = Properties.Resources.ExcluirE;
+
+        }
+
+        private void pbAlterar_MouseMove(object sender, MouseEventArgs e)
+        {
+            pbAlterar.BackgroundImage = Properties.Resources.AlterarE;
+        }
+
+        private void pbAlterar_MouseLeave(object sender, EventArgs e)
+        {
+            pbAlterar.BackgroundImage = Properties.Resources.Alterar;
+
+        }
+
+        private void PerfilG_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbExcluir_MouseLeave(object sender, EventArgs e)
+        {
+            pbExcluir.BackgroundImage = Properties.Resources.Excluir;
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCPF_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCargo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCPF_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

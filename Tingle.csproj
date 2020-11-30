@@ -248,6 +248,12 @@
     <Content Include="Properties\images\X.png" />
     <Content Include="Properties\MySql.Data.dll" />
     <Content Include="Properties\NewFile1.txt" />
+    <Content Include="Resources\Alterar.png" />
+    <Content Include="Resources\AlterarE.png" />
+    <Content Include="Resources\Excluir.png" />
+    <Content Include="Resources\ExcluirE.png" />
+    <Content Include="Resources\txtAlterar.png" />
+    <None Include="Resources\btP.png" />
     <None Include="Resources\BtEnvEs.png" />
     <None Include="Resources\BtEnv.png" />
     <None Include="Resources\btBuscarEs.png" />

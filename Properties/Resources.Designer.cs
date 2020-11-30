@@ -73,6 +73,26 @@ namespace Tingle.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Alterar {
+            get {
+                object obj = ResourceManager.GetObject("Alterar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AlterarE {
+            get {
+                object obj = ResourceManager.GetObject("AlterarE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btBuscar {
             get {
                 object obj = ResourceManager.GetObject("btBuscar", resourceCulture);
@@ -126,6 +146,16 @@ namespace Tingle.Properties {
         internal static System.Drawing.Bitmap btExportarE {
             get {
                 object obj = ResourceManager.GetObject("btExportarE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btP {
+            get {
+                object obj = ResourceManager.GetObject("btP", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -191,6 +221,26 @@ namespace Tingle.Properties {
         }
         
         /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Excluir {
+            get {
+                object obj = ResourceManager.GetObject("Excluir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ExcluirE {
+            get {
+                object obj = ResourceManager.GetObject("ExcluirE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a # Host: localhost  (Version 5.5.5-10.4.6-MariaDB)
         ///# Date: 2020-09-30 12:46:09
         ///# Generator: MySQL-Front 6.1  (Build 1.26)
@@ -220,6 +270,26 @@ namespace Tingle.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imgOk {
+            get {
+                object obj = ResourceManager.GetObject("imgOk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgOkE {
+            get {
+                object obj = ResourceManager.GetObject("imgOkE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Lock1 {
             get {
                 object obj = ResourceManager.GetObject("Lock1", resourceCulture);
@@ -240,19 +310,9 @@ namespace Tingle.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Ok {
+        internal static System.Drawing.Bitmap txtAlterar {
             get {
-                object obj = ResourceManager.GetObject("Ok", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap OkE {
-            get {
-                object obj = ResourceManager.GetObject("OkE", resourceCulture);
+                object obj = ResourceManager.GetObject("txtAlterar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
