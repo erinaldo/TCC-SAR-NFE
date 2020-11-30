@@ -29,6 +29,7 @@ namespace Tingle
             this.codigo = codigo;
         }
 
+        //Classe Prods para tipar o Json
         public class Prods
         {
         public int CHNFE { get; set; }
@@ -43,6 +44,7 @@ namespace Tingle
         public int vProd { get; set; }
         }
 
+        //Classe NFeWS para tipar o JSON
         public class NFeWS
         {
             public int CHNFE { get; set; }
@@ -93,6 +95,7 @@ namespace Tingle
             public string natOp { get; set; }
         }
 
+        //Obter a NFE pela chave de acesso, onde deserializa um JSON em strnig.
         private async Task<NFeWS> GetNFEById(int CHNFE)
         {
             using (var client = new HttpClient())
@@ -104,9 +107,7 @@ namespace Tingle
                 {
                     
                     var NFeJsonString = await response.Content.ReadAsStringAsync();
-                    //bsDados.DataSource = JsonConvert.DeserializeObject<NFeWS>(NFeJsonString);
                     NFeWS nota = JsonConvert.DeserializeObject<NFeWS>(NFeJsonString);
-                   // dgvDados.DataSource = bsDados;
                     return nota;
                 }
                 else
@@ -117,6 +118,7 @@ namespace Tingle
             }
         }
 
+        //Obter os produtos pela chave de acesso
         private async Task<BindingSource> GetProdutosById(int CHNFE, BindingSource bsDados)
         {
             using (var client = new HttpClient())
@@ -140,6 +142,7 @@ namespace Tingle
             }
         }
 
+        //Trasnformando os JSON convertidos para NFeWS e BindingSource
         private async void btnWS_Click(object sender, EventArgs e)
         {
 
@@ -155,30 +158,12 @@ namespace Tingle
             else
             {
                 openChildForm(new NFe(this.codigo, notas, produtos));
-                //NFe nfe = new NFe(codigo, notas, produtos);
-                //nfe.Show();
-                //this.Hide();
 
-                //nfe.FormClosed += (s, args) => this.Close();
-                //nfe.Show();
             }
 
-            //PopulationXMLCH();
-
-
-            // Inicial.painel.Controls.Clear();
-            //Inicial.painel.Controls.Add(new UserControl());        
         }
 
-
-        private void Ok_MouseEnter(object sender, EventArgs e)
-        {
-        }
-
-        private void Ok_MouseLeave(object sender, EventArgs e)
-        {
-        }
-
+        //Não permite caracteres
         private void txtURI_KeyPress(object sender, KeyPressEventArgs e)
         {
             if(!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)

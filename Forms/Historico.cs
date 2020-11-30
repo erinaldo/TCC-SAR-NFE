@@ -45,19 +45,12 @@ namespace Tingle
             //ListView
             listView1.View = View.Details;
             listView1.FullRowSelect = true;
-
-            /*  listView1.Groups.Add(new ListViewGroup("Ontem",
-                  HorizontalAlignment.Left));
-              listView1.Groups.Add(new ListViewGroup("Últimos 7 dias",
-                              HorizontalAlignment.Left));
-              listView1.Groups.Add(new ListViewGroup("Mês Anterior",
-               HorizontalAlignment.Left));
-            */
             listView1.SmallImageList = imageList1;
 
             
         }
     
+        //Adicionas as colunas no ListView e consulta pelo BD.
         private void consultarProd()
         {
             listView1.Clear();
@@ -99,7 +92,8 @@ namespace Tingle
             lsd.Parameters.Clear();
             connection.Close();
         }
-        
+
+        //Adicionas as colunas no ListView e consulta pelo BD.
         private void consultar()
         {
             listView1.Clear();
@@ -212,102 +206,9 @@ namespace Tingle
             connection.Close();
         }
 
-        /**private void populate(String nNF, String CNPJ, String IE)
-        {
-            //ROW
-            String[] row = { nNF, CNPJ, IE};
-
-            ListViewItem item = new ListViewItem(row);
-            
-            listView1.Items.Add(item);
-        }
-
-        private void consultar()
-        {
-            listView1.Items.Clear();
-
-            MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;user id=root;database=historico;password =");
-            var sel = "SELECT nNF, CNPJ, IE FROM destinatario";
-            var cmdSEL = new MySqlCommand(sel, connection);
-
-            try
-            {
-                connection.Open();
-                adapter = new MySqlDataAdapter(cmdSEL);
-
-                adapter.Fill(dt);
-
-                foreach (DataRow row in dt.Rows)
-                {
-                    ListViewItem lvItem = new ListViewItem(row);
-                    lvItem.SubItems.Add(row);
-                    listView1.Items.Add(lvItem); 
-                    populate(row[0].ToString(), row[1].ToString(), row[2].ToString());
-                }
-
-                connection.Close();
-
-                dt.Rows.Clear();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                connection.Close();
-            }
-        }
-
-          private void pLview()
-        {
-            MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;user id=root;database=historico;password =");
-
-            var sel = "SELECT nNF, dEmit, dRecbto, hRecbto FROM destinatario";
-            
-            var sel = "SELECT emitente.xNome, emitente.dhEmi, transportador.qVol FROM emitente " +
-                "INNER JOIN transportador ON emitente.nNF = transportador.nNF;";
-            
-            var cmdSEL = new MySqlCommand(sel, connection);
-            connection.Open();
-
-            var dataReader = cmdSEL.ExecuteReader();
-
-            while (dataReader.Read())
-            {
-                ListViewItem objListItem = new ListViewItem(dataReader.GetValue(0).ToString());
-                for (int c = 1; c < dataReader.FieldCount; c++)
-                {
-                    objListItem.SubItems.Add(dataReader.GetValue(c).ToString());
-                }
-                //lvHistorico.Items.Add(objListItem);
-            }
-            dataReader.Close();
-            connection.Close();
-        }
-*/
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //this.Close();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            //this.Close();
-        }
-
-        private void pictureBox2_MouseEnter(object sender, EventArgs e)
-        {
-            pictureBox2.BackgroundImage = img_EVoltar;
-        }
-
-        private void pictureBox2_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox2.BackgroundImage = img_Voltar;
-        }
-
         private void Histórico_Load(object sender, EventArgs e)
         {
-           
+ 
                 /*pbVoltar.BackgroundImage = img_Voltar;
                 lvHistorico.Clear();
                 lvHistorico.View = View.Details;
@@ -322,57 +223,7 @@ namespace Tingle
 
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void destinatarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-                /*if (destinatarioToolStripMenuItem.Checked == true)
-                {
-                    //var dest = new MySqlCommand("", connection);
-                    listView1.Columns.Add("Código NFe", 150);
-                    listView1.Columns.Add("Inscrição Estadual", 150);
-                    listView1.Columns.Add("CNPJ", 50);
-                    listView1.Columns.Add("Nome", 100);
-                    listView1.Columns.Add("Logradouro", 50);
-                    listView1.Columns.Add("Bairro", 50);
-                    listView1.Columns.Add("Município", 50);
-                    listView1.Columns.Add("UF", 50);
-                    listView1.Columns.Add("CEP", 50);
-                    listView1.Columns.Add("Telefone", 50);
-                    listView1.Columns.Add("Inscrição Estadual", 50);
-                    listView1.Columns.Add("Data Emitida", 150);
-                    listView1.Columns.Add("Horas Recebida", 100);
-                }
-                else
-                {
-                }*/
-            }
-
-        /*private void emitenteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            while (emitenteToolStripMenuItem.Checked == true)
-            {
-                listView1.Columns.Add("Código NFe", 150);
-                listView1.Columns.Add("Inscrição Estadual", 150);
-                listView1.Columns.Add("Data Hora Emitida", 150);
-                listView1.Columns.Add("CNPJ", 100);
-                listView1.Columns.Add("Nome");
-                listView1.Columns.Add("Logradouro", 100);
-                listView1.Columns.Add("Número", 13);
-                listView1.Columns.Add("Bairro", 100);
-                listView1.Columns.Add("Município", 100);
-                listView1.Columns.Add("UF", 2);
-                listView1.Columns.Add("CEP", 8);
-                listView1.Columns.Add("Telefone", 13);
-            }*/
-
-            
-            
-        
-
+        //Exportar para o Excel, utilizando o SaveFileDialog e transformando as colunas do ListView do Excel.
         private void button1_Click_1(object sender, EventArgs e)
         {
             if (radioButton2.Checked == true)
@@ -556,18 +407,10 @@ namespace Tingle
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            consultarProd();        }
-
-        private void btExportar_MouseEnter(object sender, EventArgs e)
-        {
-            btExportar.BackgroundImage = Properties.Resources.btExportarE;
+            consultarProd();        
         }
 
-        private void btExportar_MouseLeave(object sender, EventArgs e)
-        {
-            btExportar.BackgroundImage = Properties.Resources.btExportar;
-        }
-
+        //Animação Botão
         private void btExportar_MouseMove(object sender, MouseEventArgs e)
         {
             btExportar.BackgroundImage = Properties.Resources.btExportarE;
@@ -581,22 +424,4 @@ namespace Tingle
         }
     }
 }
-    
-    
-
-
-        /*private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            listView1.Groups.Add(new ListViewGroup("List item text",
-         HorizontalAlignment.Left));
-        }
-
-        private void destinatarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (emitenteToolStripMenuItem.Checked == false) { }
-
-        }*/
-    
-    
-
 

@@ -23,11 +23,7 @@ namespace Tingle
             pbIconePassword.BackgroundImage = Properties.Resources.Lock2;
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        //Propriedades das textboxs
         private void textBox1_Click(object sender, EventArgs e)
         {
 
@@ -41,6 +37,7 @@ namespace Tingle
             txtPassword.ForeColor = Color.WhiteSmoke;
         }
 
+        //Propriedades das textboxs
         private void textBox2_Click(object sender, EventArgs e)
         {
             txtPassword.Clear();
@@ -53,6 +50,7 @@ namespace Tingle
             txtUsername.ForeColor = Color.WhiteSmoke;
         }
 
+        //Vai para o form de Cadastro
         private void button2_Click(object sender, EventArgs e)
         {
             Registro registro = new Registro();
@@ -67,8 +65,9 @@ namespace Tingle
             this.Hide();
         }
 
+        //Verifica os campos e após iso, autentica com o banco de dados.
         private void login()
-        {  
+        {
             Connection con = new Connection();
             con.Open();
 
@@ -91,7 +90,7 @@ namespace Tingle
                                 codigo = (int)row["cod_fun"];
 
                             }
-                            MessageBox.Show("Bem-vindo " + nome); 
+                            MessageBox.Show("Bem-vindo " + nome);
 
                             Inicial inicial = new Inicial(this.codigo);
                             inicial.Show();
@@ -105,16 +104,16 @@ namespace Tingle
                             MessageBox.Show("Funcionário não registrado!", "Information");
                         }
                     }
-                
-                else
-                {
-                    MessageBox.Show("Nome do Funcionário ou senha em branco!", "Information");
+
+                    else
+                    {
+                        MessageBox.Show("Nome do Funcionário ou senha em branco!", "Information");
+                    }
                 }
-            }
-            catch
-            {
-                MessageBox.Show("Erro de conexão!", "Information");
-            }
+                catch
+                {
+                    MessageBox.Show("Erro de conexão!", "Information");
+                }
                 finally
                 {
                     con.Close();
@@ -124,56 +123,11 @@ namespace Tingle
         private void btnLogin_Click(object sender, EventArgs e)
         {
             login();
-            /*Inicial inicial = new Inicial();
-            inicial.Show();
-            this.Hide();
 
-            inicial.FormClosed += (s, args) => this.Close();
-            inicial.Show();
-            */
-
-            /* try
-             {
-
-                 if (txtUsername.Text != "" && txtPassword.Text != "")
-                 {
-
-                     con.Open();
-                     string query = "select username, password from user WHERE username ='" + txtUsername.Text + "' AND password ='" + txtPassword.Text + "'";
-                     MySqlDataReader row;
-                     row = con.ExecuteReader(query);
-                     if (row.HasRows)
-                     {
-                         while (row.Read())
-                         {
-                             username = row["username"].ToString();
-                             password = row["password"].ToString();
-
-                         }
-                     }
-
-                     else
-                     {
-                         MessageBox.Show("Data not found", "Information");
-                     }
-                 }
-                 else
-                 {
-                     MessageBox.Show("Username or Password is empty", "Information");
-                 }
-             }
-             catch
-             {
-                 MessageBox.Show("Connection Error", "Information");
-             }*/
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
     }
 }
-    
+
+
 

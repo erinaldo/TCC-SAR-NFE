@@ -28,6 +28,8 @@ namespace Tingle.Forms
 
         }
 
+
+        //Verifica se há dados, e depois deleta o funcionário
         private void Excluir()
         {
             connection.Open();
@@ -39,7 +41,7 @@ namespace Tingle.Forms
             }
             //verifica se foi selecionado um registro
             if (string.IsNullOrEmpty(txtCPF.Text) || string.IsNullOrEmpty(txtNome.Text) ||
-string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtCargo.Text))
+            string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtCargo.Text))
             {
                 MessageBox.Show("Selecione um registro para exclusão.");
                 return;
@@ -50,7 +52,7 @@ string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtCargo.Text))
                 return;
 
             if (!(MessageBox.Show("Você deseja excluir esse funcionário?", "Atualizar registro !",
-MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes))
+            MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes))
                 return;
 
             string sql = "DELETE FROM funcionario WHERE cod_fun=@Codigo";
@@ -73,6 +75,8 @@ MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes))
             }
         }
 
+
+        //Verifica se há dados, e depois altera dados do funcionário
         private void Alterar()
         {
             connection.Open();
@@ -84,7 +88,7 @@ MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes))
             }
             //verifica se foi selecionado um registro
             if (string.IsNullOrEmpty(txtCPF.Text) || string.IsNullOrEmpty(txtNome.Text) ||
-string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtCargo.Text))
+            string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtCargo.Text))
             {
                 MessageBox.Show("Selecione um registro para exclusão.");
                 return;
@@ -95,7 +99,7 @@ string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtCargo.Text))
                 return;
 
             if (!(MessageBox.Show("Confirma a atualização deste registro?", "Atualizar registro !",
-MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes))
+            MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes))
                 return;
            
             string sql = "Update funcionario set nome=@Nome, email=@Email, cargo=@Cargo, CPF=@CPF where cod_fun =@Codigo";
@@ -122,6 +126,7 @@ MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes))
             }
         }
 
+        //Consulta dados do Funcionário e depois mostra nas textboxs
         private void Consulta()
         {
             //Connection con = new Connection();
@@ -151,6 +156,8 @@ MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes))
             }*/
         }
 
+
+        //Carrega os dados do DataGridView
         private void LoadDGV()
         {
             try
@@ -190,7 +197,8 @@ MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes))
         {
             Excluir();
         }
-
+        
+        //Seleciona o conteúdo e passa para a textbox
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             _linhaIndice = e.RowIndex;
@@ -213,9 +221,5 @@ MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes))
             
         }
 
-        private void txtCodigo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

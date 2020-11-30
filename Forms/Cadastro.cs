@@ -13,7 +13,7 @@ namespace Tingle
 {
     public partial class Registro : Form
     {
-
+        //Conexão MySQL
         MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;user id=root; password =;database=historico; Convert Zero Datetime=True");
 
         public Registro()
@@ -31,7 +31,9 @@ namespace Tingle
 
         }
 
-        //CODE
+        //Código
+
+        //Cadastro de Funcionário
         private void cadastrar()
         {
             validarCampos();
@@ -68,7 +70,7 @@ namespace Tingle
             }
     }
 
-        //DESIGN FORM
+        //Vai para o Login
         private void button2_Click(object sender, EventArgs e)
         {
             Login login = new Login();
@@ -79,11 +81,8 @@ namespace Tingle
             login.Show();
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
+        //Valida os campos de cadastro
         private bool validarCampos()
         {
             if (this.txtEmail.Text.ToString().Equals(String.Empty))
@@ -107,13 +106,6 @@ namespace Tingle
                 return false;
             }
 
-            /* if (this.txtDataNascimento.Text.ToString().Equals(String.Empty))
-             {
-                 MessageBox.Show("Digite a data de nascimento! ", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                 this.txtDataNascimento.Focus();
-                 return false;
-             } */
-
             if (this.txtCPF.Text.ToString().Equals(String.Empty))
             {
                 MessageBox.Show("Digite o RG! ", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -128,16 +120,10 @@ namespace Tingle
                 return false;
             }
 
-            /* if (this.cboSexo. == null)
-            {
-                MessageBox.Show("Selecione o sexo! ", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                this.cboSexo.Focus();
-                return false;
-            }*/
-
             return true;
         }
 
+        //Limpa os campos
         private void limparCampos()
         {
             this.txtUsername.Clear();
@@ -148,7 +134,7 @@ namespace Tingle
         }
 
 
-
+        //Propriedades das textboxs
         private void textBox1_Click(object sender, EventArgs e)
         {
             txtUsername.Clear();
@@ -173,6 +159,7 @@ namespace Tingle
             txtCargo.ForeColor = Color.WhiteSmoke;
         }
 
+        //Propriedades das textboxs
         private void textBox2_Click(object sender, EventArgs e)
         {
             txtPassword.Clear();
@@ -198,6 +185,7 @@ namespace Tingle
             txtCargo.ForeColor = Color.WhiteSmoke;
         }
 
+        //Propriedades das textboxs
         private void textBox3_Click(object sender, EventArgs e)
         {
             txtEmail.Clear();
@@ -220,16 +208,6 @@ namespace Tingle
             pbCargo.BackgroundImage = Properties.Resources.CargoS;
             panel1.BackColor = Color.WhiteSmoke;
             txtCargo.ForeColor = Color.WhiteSmoke;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            cadastrar();
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void txtCPF_Click(object sender, EventArgs e)
@@ -278,6 +256,10 @@ namespace Tingle
             pbCPF.BackgroundImage = Properties.Resources.CPFS;
             panel4.BackColor = Color.WhiteSmoke;
             txtCPF.ForeColor = Color.WhiteSmoke;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cadastrar();
         }
     }
 }
