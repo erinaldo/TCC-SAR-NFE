@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Excel;
 using MySql.Data.MySqlClient;
 
 namespace Tingle
 {
-    public partial class Histórico : Form
+    public partial class Histórico : UserControl
     {
 
         string pastaimg = "";
@@ -20,17 +22,21 @@ namespace Tingle
 
         MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;user id=root; password =;database=historico; Convert Zero Datetime=True");
         MySqlCommand cmd;
+        private MySqlCommand lsd;
+        private MySqlDataAdapter adapter2;
+        private DataSet ds2;
         MySqlDataAdapter adapter;
-        DataTable dt;
+        System.Data.DataTable dt;
         DataSet ds;
         private int codigo;
+        private System.Data.DataTable dt2;
 
         public Histórico(int codigo)
         {
             InitializeComponent();
             this.codigo = codigo;
 
-            pastaimg = Application.StartupPath + @"\";
+            pastaimg = System.Windows.Forms.Application.StartupPath + @"\";
 
             //Imagens
             img_Voltar = Image.FromFile(pastaimg + "branco.png");
@@ -49,54 +55,98 @@ namespace Tingle
             */
             listView1.SmallImageList = imageList1;
 
-            listView1.Columns.Add("Funcionário", 150);
-            listView1.Columns.Add("Código NFe", 150);
-            listView1.Columns.Add("Inscrição Estadual", 150);
-            listView1.Columns.Add("CNPJ Destinatário", 50);
-            listView1.Columns.Add("Nome", 100);
-            listView1.Columns.Add("Logradouro", 50);
-            listView1.Columns.Add("Bairro", 50);
-            listView1.Columns.Add("Município", 50);
-            listView1.Columns.Add("UF", 50);
-            listView1.Columns.Add("CEP", 50);
-            listView1.Columns.Add("Telefone", 50);
-            listView1.Columns.Add("Inscrição Estadual", 50);
-            listView1.Columns.Add("Data Emitida", 150);
-            listView1.Columns.Add("Horas Recebida", 100);
-            listView1.Columns.Add("Código NFe", 150);
-            listView1.Columns.Add("Inscrição Estadual", 150);
-            listView1.Columns.Add("Data Hora Emitida", 150);
-            listView1.Columns.Add("CNPJ", 100);
-            listView1.Columns.Add("Nome", 100);
-            listView1.Columns.Add("Logradouro", 100);
-            listView1.Columns.Add("Número", 45);
-            listView1.Columns.Add("Bairro", 100);
-            listView1.Columns.Add("Município", 100);
-            listView1.Columns.Add("UF", 50);
-            listView1.Columns.Add("CEP", 50);
-            listView1.Columns.Add("Telefone", 50);
-            listView1.Columns.Add("BC", 100);
-            listView1.Columns.Add("ICMS", 100);
-            listView1.Columns.Add("BCST", 100);
-            listView1.Columns.Add("Produto", 100);
-            listView1.Columns.Add("Frete", 100);
-            listView1.Columns.Add("Seguro", 100);
-            listView1.Columns.Add("Desconto", 100);
-            listView1.Columns.Add("IPI", 100);
-            listView1.Columns.Add("Outro", 100);
-            listView1.Columns.Add("NF", 100);
-            listView1.Columns.Add("CNPJ", 100);
-            listView1.Columns.Add("Nome", 100);
-            listView1.Columns.Add("IE", 100);
-            listView1.Columns.Add("Rua", 100);
-            listView1.Columns.Add("Município", 100);
-            listView1.Columns.Add("UF", 100);
-            listView1.Columns.Add("Quantidade Vol", 100);
-            listView1.Columns.Add("Específicação", 100);
-
+            
         }
+    
+        private void consultarProd()
+        {
+            listView1.Clear();
+            listView1.Columns.Add("cProd", 150);
+            listView1.Columns.Add("nNF", 150);
+            listView1.Columns.Add("xProd", 150);
+            listView1.Columns.Add("NCM", 50);
+            listView1.Columns.Add("CFOP", 100);
+            listView1.Columns.Add("uCom", 50);
+            listView1.Columns.Add("qCom", 50);
+            listView1.Columns.Add("vUnCom", 50);
+            listView1.Columns.Add("vProd", 50);
+
+            connection.Open();
+            lsd = new MySqlCommand("SELECT * FROM produtos ", connection);               
+            adapter2 = new MySqlDataAdapter(lsd);
+            ds2 = new DataSet();
+            adapter2.Fill(ds2, "testTable");
+            dt2 = ds2.Tables["testTable"];
+
+
+            for (int i = 0; i <= dt2.Rows.Count - 1; i++)
+            {
+
+                listView1.Items.Add(dt2.Rows[i].ItemArray[0].ToString(), 0);
+                listView1.Items[i].SubItems.Add(dt2.Rows[i].ItemArray[1].ToString());
+                listView1.Items[i].SubItems.Add(dt2.Rows[i].ItemArray[2].ToString());
+                listView1.Items[i].SubItems.Add(dt2.Rows[i].ItemArray[3].ToString());
+                listView1.Items[i].SubItems.Add(dt2.Rows[i].ItemArray[4].ToString());
+                listView1.Items[i].SubItems.Add(dt2.Rows[i].ItemArray[5].ToString());
+                listView1.Items[i].SubItems.Add(dt2.Rows[i].ItemArray[6].ToString());
+                listView1.Items[i].SubItems.Add(dt2.Rows[i].ItemArray[7].ToString());
+                listView1.Items[i].SubItems.Add(dt2.Rows[i].ItemArray[8].ToString());
+                //listView1.Items[i].SubItems.Add(dt2.Rows[i].ItemArray[9].ToString());
+            
+                
+            }
+
+            lsd.Parameters.Clear();
+            connection.Close();
+        }
+        
         private void consultar()
         {
+            listView1.Clear();
+            listView1.Columns.Add("Funcionário", 150);
+            listView1.Columns.Add("Código NFe", 150);
+            listView1.Columns.Add("Dest_CNPJ", 150);
+            listView1.Columns.Add("Dest_Nome", 50);
+            listView1.Columns.Add("Dest_Logradouro", 100);
+            listView1.Columns.Add("Dest_Bairro", 50);
+            listView1.Columns.Add("Dest_Município", 50);
+            listView1.Columns.Add("Dest_UF", 50);
+            listView1.Columns.Add("Dest_CEP", 50);
+            listView1.Columns.Add("Dest_Fone", 50);
+            listView1.Columns.Add("Dest_IE", 50);
+            listView1.Columns.Add("Data Emitida", 50);
+            listView1.Columns.Add("Data Recebido", 150);
+            listView1.Columns.Add("Horas Recebida", 100);
+            listView1.Columns.Add("CNPJ", 150);
+            listView1.Columns.Add("Emit_Nome", 150);
+            listView1.Columns.Add("Emit_Logradouro", 150);
+            listView1.Columns.Add("Emit_Bairro", 100);
+            listView1.Columns.Add("Emit_Município", 100);
+            listView1.Columns.Add("Emit_UF", 100);
+            listView1.Columns.Add("Emit_CEP", 45);
+            listView1.Columns.Add("Emit_Fone", 100);
+            listView1.Columns.Add("Emit_IE", 100);
+            listView1.Columns.Add("Emit_Número", 50);
+            listView1.Columns.Add("vBc", 50);
+            listView1.Columns.Add("vICMS", 50);
+            listView1.Columns.Add("vBCTS", 100);
+            listView1.Columns.Add("vProd", 100);
+            listView1.Columns.Add("vFrete", 100);
+            listView1.Columns.Add("vSeg", 100);
+            listView1.Columns.Add("vDesc", 100);
+            listView1.Columns.Add("vIPI", 100);
+            listView1.Columns.Add("vOutro", 100);
+            listView1.Columns.Add("vNF", 100);
+            listView1.Columns.Add("Transp_CNPJ", 100);
+            listView1.Columns.Add("Transp_Nome", 100);
+            listView1.Columns.Add("Transp_Logradouro", 100);
+            listView1.Columns.Add("Transp_Município", 100);
+            listView1.Columns.Add("Transp_UF", 100);
+            listView1.Columns.Add("Transp_IE", 100);
+            listView1.Columns.Add("qVol", 100);
+            listView1.Columns.Add("esp", 100);
+            listView1.Columns.Add("fundId", 100);
+
 
             connection.Open();
             cmd = new MySqlCommand("SELECT funcionario.nome, completa.* " +
@@ -235,19 +285,14 @@ namespace Tingle
         }
 */
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
 
         private void pictureBox2_MouseEnter(object sender, EventArgs e)
@@ -263,7 +308,6 @@ namespace Tingle
         private void Histórico_Load(object sender, EventArgs e)
         {
            
-                consultar();
                 /*pbVoltar.BackgroundImage = img_Voltar;
                 lvHistorico.Clear();
                 lvHistorico.View = View.Details;
@@ -278,6 +322,269 @@ namespace Tingle
 
         }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void destinatarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                /*if (destinatarioToolStripMenuItem.Checked == true)
+                {
+                    //var dest = new MySqlCommand("", connection);
+                    listView1.Columns.Add("Código NFe", 150);
+                    listView1.Columns.Add("Inscrição Estadual", 150);
+                    listView1.Columns.Add("CNPJ", 50);
+                    listView1.Columns.Add("Nome", 100);
+                    listView1.Columns.Add("Logradouro", 50);
+                    listView1.Columns.Add("Bairro", 50);
+                    listView1.Columns.Add("Município", 50);
+                    listView1.Columns.Add("UF", 50);
+                    listView1.Columns.Add("CEP", 50);
+                    listView1.Columns.Add("Telefone", 50);
+                    listView1.Columns.Add("Inscrição Estadual", 50);
+                    listView1.Columns.Add("Data Emitida", 150);
+                    listView1.Columns.Add("Horas Recebida", 100);
+                }
+                else
+                {
+                }*/
+            }
+
+        /*private void emitenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            while (emitenteToolStripMenuItem.Checked == true)
+            {
+                listView1.Columns.Add("Código NFe", 150);
+                listView1.Columns.Add("Inscrição Estadual", 150);
+                listView1.Columns.Add("Data Hora Emitida", 150);
+                listView1.Columns.Add("CNPJ", 100);
+                listView1.Columns.Add("Nome");
+                listView1.Columns.Add("Logradouro", 100);
+                listView1.Columns.Add("Número", 13);
+                listView1.Columns.Add("Bairro", 100);
+                listView1.Columns.Add("Município", 100);
+                listView1.Columns.Add("UF", 2);
+                listView1.Columns.Add("CEP", 8);
+                listView1.Columns.Add("Telefone", 13);
+            }*/
+
+            
+            
+        
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked == true)
+            {
+
+                using (SaveFileDialog sfd = new SaveFileDialog()
+                {
+                    Filter = "Excel |* .xls",
+                    InitialDirectory = @"c:\dados\xls",
+                    FileName = "NFeCompleta" + DateTime.Now.Millisecond.ToString() + ".xls",
+                    ValidateNames = true
+                })
+                {
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+                        Workbook wb = app.Workbooks.Add(XlSheetType.xlWorksheet);
+                        Worksheet ws = (Worksheet)app.ActiveSheet;
+                        app.Visible = false;
+                        ws.Cells[1, 1] = "Funcionário";
+                        ws.Cells[1, 2] = "Código NFe";
+                        ws.Cells[1, 3] = "Dest_CNPJ";
+                        ws.Cells[1, 4] = "Dest_Nome";
+                        ws.Cells[1, 5] = "Dest_Logradouro";
+                        ws.Cells[1, 6] = "Dest_Bairro";
+                        ws.Cells[1, 7] = "Dest_Município";
+                        ws.Cells[1, 8] = "Dest_UF";
+                        ws.Cells[1, 9] = "Dest_CEP";
+                        ws.Cells[1, 10] = "Dest_Fone";
+                        ws.Cells[1, 11] = "Dest_IE";
+                        ws.Cells[1, 12] = "Data Emitida";
+                        ws.Cells[1, 13] = "Data Recebido";
+                        ws.Cells[1, 14] = "Horas Recebida";
+                        ws.Cells[1, 15] = "CNPJ";
+                        ws.Cells[1, 16] = "Emit_Nome";
+                        ws.Cells[1, 17] = "Emit_Logradouro";
+                        ws.Cells[1, 18] = "Emit_Bairro";
+                        ws.Cells[1, 19] = "Emit_Município";
+                        ws.Cells[1, 20] = "Emit_UF";
+                        ws.Cells[1, 21] = "Emit_CEP";
+                        ws.Cells[1, 22] = "Emit_Fone";
+                        ws.Cells[1, 23] = "Emit_IE";
+                        ws.Cells[1, 24] = "Emit_Número";
+                        ws.Cells[1, 25] = "vBc";
+                        ws.Cells[1, 26] = "vICMS";
+                        ws.Cells[1, 27] = "vBCTS";
+                        ws.Cells[1, 28] = "vProd";
+                        ws.Cells[1, 29] = "vFrete";
+                        ws.Cells[1, 30] = "vSeg";
+                        ws.Cells[1, 31] = "vDesc";
+                        ws.Cells[1, 32] = "vIPI";
+                        ws.Cells[1, 33] = "vOutro";
+                        ws.Cells[1, 34] = "vNF";
+                        ws.Cells[1, 35] = "Transp_CNPJ";
+                        ws.Cells[1, 36] = "Transp_Nome";
+                        ws.Cells[1, 37] = "Transp_Logradouro";
+                        ws.Cells[1, 38] = "Transp_Município";
+                        ws.Cells[1, 39] = "Transp_UF";
+                        ws.Cells[1, 40] = "Transp_IE";
+                        ws.Cells[1, 41] = "qVol";
+                        ws.Cells[1, 42] = "esp";
+                        ws.Cells[1, 43] = "fundId";
+                        int i = 2;
+
+                        foreach (ListViewItem item in listView1.Items)
+                        {
+                            ws.Cells[i, 1] = item.SubItems[0].Text;
+                            ws.Cells[i, 2] = item.SubItems[1].Text;
+                            ws.Cells[i, 3] = item.SubItems[2].Text;
+                            ws.Cells[i, 4] = item.SubItems[3].Text;
+                            ws.Cells[i, 5] = item.SubItems[4].Text;
+                            ws.Cells[i, 6] = item.SubItems[5].Text;
+                            ws.Cells[i, 7] = item.SubItems[6].Text;
+                            ws.Cells[i, 8] = item.SubItems[7].Text;
+                            ws.Cells[i, 9] = item.SubItems[8].Text;
+                            ws.Cells[i, 10] = item.SubItems[9].Text;
+                            ws.Cells[i, 11] = item.SubItems[10].Text;
+                            ws.Cells[i, 12] = item.SubItems[11].Text;
+                            ws.Cells[i, 13] = item.SubItems[12].Text;
+                            ws.Cells[i, 14] = item.SubItems[13].Text;
+                            ws.Cells[i, 15] = item.SubItems[14].Text;
+                            ws.Cells[i, 16] = item.SubItems[15].Text;
+                            ws.Cells[i, 17] = item.SubItems[16].Text;
+                            ws.Cells[i, 18] = item.SubItems[17].Text;
+                            ws.Cells[i, 19] = item.SubItems[18].Text;
+                            ws.Cells[i, 20] = item.SubItems[19].Text;
+                            ws.Cells[i, 21] = item.SubItems[20].Text;
+                            ws.Cells[i, 22] = item.SubItems[21].Text;
+                            ws.Cells[i, 23] = item.SubItems[22].Text;
+                            ws.Cells[i, 24] = item.SubItems[23].Text;
+                            ws.Cells[i, 25] = item.SubItems[24].Text;
+                            ws.Cells[i, 26] = item.SubItems[25].Text;
+                            ws.Cells[i, 27] = item.SubItems[26].Text;
+                            ws.Cells[i, 28] = item.SubItems[27].Text;
+                            ws.Cells[i, 29] = item.SubItems[28].Text;
+                            ws.Cells[i, 30] = item.SubItems[29].Text;
+                            ws.Cells[i, 31] = item.SubItems[30].Text;
+                            ws.Cells[i, 32] = item.SubItems[31].Text;
+                            ws.Cells[i, 33] = item.SubItems[32].Text;
+                            ws.Cells[i, 34] = item.SubItems[33].Text;
+                            ws.Cells[i, 35] = item.SubItems[34].Text;
+                            ws.Cells[i, 36] = item.SubItems[35].Text;
+                            ws.Cells[i, 37] = item.SubItems[36].Text;
+                            ws.Cells[i, 38] = item.SubItems[37].Text;
+                            ws.Cells[i, 39] = item.SubItems[38].Text;
+                            ws.Cells[i, 40] = item.SubItems[39].Text;
+                            ws.Cells[i, 41] = item.SubItems[40].Text;
+                            ws.Cells[i, 42] = item.SubItems[41].Text;
+                            ws.Cells[i, 43] = item.SubItems[42].Text;
+                            i++;
+                        }
+                        wb.SaveAs(sfd.FileName, XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, true, false, XlSaveAsAccessMode.xlNoChange,
+     XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
+                        app.Quit();
+                    }
+                    MessageBox.Show("Seus dados foram exportados para o Excel com sucesso");
+                }
+                
+            }
+
+            if (radioButton1.Checked == true)
+            {
+
+                using (SaveFileDialog sfd = new SaveFileDialog()
+                {
+                    Filter = "Excel |* .xls",
+                    InitialDirectory = @"c:\dados\xls",
+                    FileName = "NFeProd" + DateTime.Now.Millisecond.ToString() + ".xls",
+                    ValidateNames = true
+                })
+                {
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+                        Workbook wb = app.Workbooks.Add(XlSheetType.xlWorksheet);
+                        Worksheet ws = (Worksheet)app.ActiveSheet;
+                        app.Visible = false;
+                        ws.Cells[1, 1] = "cProd";
+                        ws.Cells[1, 2] = "nNF";
+                        ws.Cells[1, 3] = "xProd";
+                        ws.Cells[1, 4] = "NCM";
+                        ws.Cells[1, 5] = "CFOP";
+                        ws.Cells[1, 6] = "uCom";
+                        ws.Cells[1, 7] = "qCom";
+                        ws.Cells[1, 8] = "vUnCom";
+                        ws.Cells[1, 9] = "vProd";
+                        int i = 2;
+
+                        foreach (ListViewItem item in listView1.Items)
+                        {
+                            ws.Cells[i, 1] = item.SubItems[0].Text;
+                            ws.Cells[i, 2] = item.SubItems[1].Text;
+                            ws.Cells[i, 3] = item.SubItems[2].Text;
+                            ws.Cells[i, 4] = item.SubItems[3].Text;
+                            ws.Cells[i, 5] = item.SubItems[4].Text;
+                            ws.Cells[i, 6] = item.SubItems[5].Text;
+                            ws.Cells[i, 7] = item.SubItems[6].Text;
+                            ws.Cells[i, 8] = item.SubItems[7].Text;
+                            ws.Cells[i, 9] = item.SubItems[8].Text;
+                            i++;
+                        }
+                        wb.SaveAs(sfd.FileName, XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, true, false, XlSaveAsAccessMode.xlNoChange,
+     XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
+                        app.Quit();
+                    }
+                    MessageBox.Show("Seus dados foram exportados para o Excel com sucesso");
+                }
+            }
+
+            else 
+            {
+                MessageBox.Show("Opção de exibição não selecionada"); 
+            }
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            consultar();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            consultarProd();        }
+
+        private void btExportar_MouseEnter(object sender, EventArgs e)
+        {
+            btExportar.BackgroundImage = Properties.Resources.btExportarE;
+        }
+
+        private void btExportar_MouseLeave(object sender, EventArgs e)
+        {
+            btExportar.BackgroundImage = Properties.Resources.btExportar;
+        }
+
+        private void btExportar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btExportar.BackgroundImage = Properties.Resources.btExportarE;
+
+        }
+
+        private void btExportar_MouseLeave_1(object sender, EventArgs e)
+        {
+            btExportar.BackgroundImage = Properties.Resources.btExportar;
+
+        }
+    }
+}
+    
+    
+
+
         /*private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             listView1.Groups.Add(new ListViewGroup("List item text",
@@ -289,7 +596,7 @@ namespace Tingle
             if (emitenteToolStripMenuItem.Checked == false) { }
 
         }*/
-    }
+    
     
 
-}
+

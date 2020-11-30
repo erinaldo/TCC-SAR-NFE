@@ -1,0 +1,11 @@
+Design atualizado, me avise caso tenha faltado alguma coisa (por mais que eu ache que esteja esquecendo de algo). Vou dar uma saída agora e mais tarde eu volto e temino algo caso esteja realmente faltando. É nois, da uma olhada ai e manda no zap oq vc achou.
+
+- Alteração nos botões de enviar e buscar do forms da inserção de NFe (sem alterações nos códigos, somente nos recursos)
+
+- Coloquei a imagem do botão exportar e já programei para que fique escuro quando passa o mouse, só precisa verificar se deu certo. Também já atribui a função do botão à imagem.
+
+- Mudei um pouco o design e o tamanho de todos os botões do mesmo estilo do anexar arquivos (buscar, enviar, ok, exportar)
+
+- Mudei o design da textBox da tela da chave de acesso e do botão de Ok (tbm já programei aquele negócio de passar o mouse, só precisa ver se deu certo tb)
+
+- Dá uma olhada ae

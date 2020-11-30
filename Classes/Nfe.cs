@@ -32,6 +32,7 @@ namespace Tingle
 
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
+                Path = "";
                 Path = fileDialog.FileName.ToString();
             }
         }
@@ -39,6 +40,7 @@ namespace Tingle
         //Ler o Esquema XML com a função do DataSet
         public static void Read()
         {
+            XMLSchema.Clear();
             XMLSchema.ReadXml(Path);
         }
     }

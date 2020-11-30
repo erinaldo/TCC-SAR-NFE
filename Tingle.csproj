@@ -33,9 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>.\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=7.0.2.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Downloads\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Downloads\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -88,13 +97,13 @@
       <DependentUpon>Leitor.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Historico.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\Historico.Designer.cs">
       <DependentUpon>Historico.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Perfil.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\Perfil.Designer.cs">
       <DependentUpon>Perfil.cs</DependentUpon>
@@ -112,6 +121,18 @@
       <DependentUpon>Cadastro.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Nfe.cs" />
+    <Compile Include="Forms\PerfilG.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\PerfilG.Designer.cs">
+      <DependentUpon>PerfilG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\ChaveAcesso.resx">
@@ -134,6 +155,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Cadastro.resx">
       <DependentUpon>Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PerfilG.resx">
+      <DependentUpon>PerfilG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -188,17 +215,53 @@
   <ItemGroup>
     <Content Include="MySql.Data.dll" />
     <Content Include="NewFile1.txt" />
+    <Content Include="Properties\images\0086FB_Logo.png" />
+    <Content Include="Properties\images\azul.png" />
+    <Content Include="Properties\images\branco.png" />
+    <Content Include="Properties\images\btBuscar.png" />
+    <Content Include="Properties\images\btBuscarEs.png" />
+    <Content Include="Properties\images\BtEnv.png" />
+    <Content Include="Properties\images\BtEnvEs.png" />
+    <Content Include="Properties\images\btExportar.png" />
+    <Content Include="Properties\images\btExportarE.png" />
+    <Content Include="Properties\images\Cargo.png" />
+    <Content Include="Properties\images\CargoS.png" />
+    <Content Include="Properties\images\CPF.png" />
+    <Content Include="Properties\images\CPFS.png" />
+    <Content Include="Properties\images\Email.png" />
+    <Content Include="Properties\images\Email1.png" />
+    <Content Include="Properties\images\Email2.png" />
+    <Content Include="Properties\images\EmailS.png" />
+    <Content Include="Properties\images\historico.sql" />
+    <Content Include="Properties\images\Lock.png" />
+    <Content Include="Properties\images\Lock1.png" />
+    <Content Include="Properties\images\Lock2.png" />
+    <Content Include="Properties\images\LockS.png" />
+    <Content Include="Properties\images\Ok.png" />
+    <Content Include="Properties\images\OkE.png" />
+    <Content Include="Properties\images\txtChave.png" />
+    <Content Include="Properties\images\User.png" />
+    <Content Include="Properties\images\User1.png" />
+    <Content Include="Properties\images\User2.png" />
+    <Content Include="Properties\images\UserS.png" />
+    <Content Include="Properties\images\voltarAzul.png" />
+    <Content Include="Properties\images\X.png" />
     <Content Include="Properties\MySql.Data.dll" />
     <Content Include="Properties\NewFile1.txt" />
+    <None Include="Resources\BtEnvEs.png" />
+    <None Include="Resources\BtEnv.png" />
+    <None Include="Resources\btBuscarEs.png" />
+    <None Include="Resources\btBuscar.png" />
+    <None Include="Resources\txtChave.png" />
+    <None Include="Resources\OkE.png" />
+    <None Include="Resources\Ok.png" />
+    <None Include="Resources\btExportarE.png" />
+    <None Include="Resources\btExportar.png" />
     <None Include="Resources\voltarAzul.png" />
     <None Include="Resources\CargoS.png" />
     <None Include="Resources\Cargo.png" />
     <None Include="Resources\CPFS.png" />
     <None Include="Resources\CPF.png" />
-    <None Include="Resources\btBuscarEs.png" />
-    <None Include="Resources\btBuscar.png" />
-    <None Include="Resources\BtEnvEs.png" />
-    <None Include="Resources\BtEnv.png" />
     <None Include="Resources\historico.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

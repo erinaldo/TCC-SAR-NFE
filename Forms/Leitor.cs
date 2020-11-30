@@ -8,17 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static Tingle.ChaveAcesso;
 
 namespace Tingle
 {
     public partial class NFe : Form
     {
         private int codigo;
+        private NFeWS notas;
+        private BindingSource produtos;
 
-        public NFe(int codigo)
+        public NFe(int codigo, NFeWS notas, BindingSource produtos)
         {
             InitializeComponent();
             this.codigo = codigo;
+            this.notas = notas;
+            this.produtos = produtos;
             pbEnviar.BackgroundImage = Properties.Resources.BtEnv;
             pbInserir.BackgroundImage = Properties.Resources.btBuscar;
         }
@@ -30,16 +35,17 @@ namespace Tingle
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
 
         private void NFe_Load(object sender, EventArgs e)
         {
+            this.Refresh();
 
         }
 
@@ -266,6 +272,70 @@ namespace Tingle
 
         }
 
+        public void PopulationXMLCH()
+        {
+
+                //Emitente
+                xLgrEmitente.Text = notas.Emit_xLgr.ToString();
+                IdentificaçãoEmitentetxt.Text = notas.Emit_xNome.ToString();
+                xBairroEmitente.Text = notas.Emit_xBairro.ToString();
+                xMunEmit.Text = notas.Emit_xMun.ToString();
+                UFemit.Text = notas.Emit_UF.ToString();
+                CEPemit.Text = notas.Emit_CEP.ToString();
+                foneEmitente.Text = notas.Emit_fone.ToString();
+                IETtxt.Text = notas.Emit_IE.ToString();
+                nroEmitente.Text = notas.Emit_nro.ToString();
+                NOtxt.Text = notas.Emit_xLgr.ToString();
+                DataEtxt.Text = notas.dEmit.ToString();
+                CNPJeCPFtxt.Text = notas.CNPJ.ToString();
+
+                //Destinatário
+                NomeRtxt.Text = notas.Dest_xNome.ToString();
+                CNPJeCPFRtext.Text = notas.Dest_CNPJ.ToString();
+                Enderecotxt.Text = notas.Dest_xLgr.ToString();
+                Bairrotxt.Text = notas.Dest_xBairro.ToString();
+                Municipiotxt.Text = notas.Dest_xMun.ToString();
+                CEPtxt.Text = notas.Dest_CEP.ToString();
+                Telefonetxt.Text = notas.Dest_fone.ToString();
+                UFtxt.Text = notas.Dest_UF.ToString();
+                IERtxt.Text = notas.Dest_IE.ToString();
+                DataSaidatxt.Text = notas.dRecbto.ToString();
+                HoraSaidatxt.Text = notas.hRecbto.ToString();
+
+                //Transporte
+
+                NomeTtxt.Text = notas.Transp_xNome.ToString();
+                EnderecoTtxt.Text = notas.Transp_xLgr.ToString();
+                MunicipioTtxt.Text = notas.Transp_xMun.ToString();
+                IETtxt.Text = notas.Transp_IE.ToString();
+                CNPJTtxt.Text = notas.Transp_CNPJ.ToString();
+                UFTtxt.Text = notas.Transp_UF.ToString();
+                Quantidadetxt.Text = notas.qVol.ToString();
+                Especietxt.Text = notas.esp.ToString();
+                FreteTtxt.Text = notas.modfrete.ToString();
+
+                //Total
+                Basetxt.Text = notas.vBc.ToString();
+                ICMStxt.Text = notas.vICMS.ToString();
+                BaseSTtxt.Text = notas.vBCTS.ToString();
+                ValorTotalProdtxt.Text = notas.vProd.ToString();
+                Fretetxt.Text = notas.vFrete.ToString();
+                Segurotxt.Text = notas.vSeg.ToString();
+                Descontotxt.Text = notas.vDesc.ToString();
+                PIStxt.Text = notas.vIPI.ToString();
+                //COFINStxt.Text = notas.modfrete.ToString();
+                Despesastxt.Text = notas.vOutro.ToString();
+                ValorTotalNotatxt.Text = notas.vNF.ToString();
+
+                //Informações adicionais
+                UAPtxt.Text = notas.nProt.ToString();
+                nNF.Text = notas.nNF.ToString();
+                ChaveAcessotxt.Text = notas.CHNFE.ToString();
+
+                dgvProd.DataSource = produtos;
+
+            }
+
         //População dos Dados do Esquema XML
         private void PopulationXML()
         {
@@ -327,7 +397,11 @@ namespace Tingle
 
             //Produtos
             //Pega todos os dados do produto do Esquema XML para exibir no DataGridView
+            this.dgvProd.DataSource = null;
+            dgvProd.Rows.Clear();
+
             dgvProd.DataSource = Nfe.XMLSchema.Tables["prod"];
+
         }
 
         private void pbEnviar_Click(object sender, EventArgs e)
@@ -337,6 +411,7 @@ namespace Tingle
 
         private void pbInserir_Click_1(object sender, EventArgs e)
         {
+            this.Refresh();
             OpenFile();
             PopulationXML();
         }
@@ -373,7 +448,22 @@ namespace Tingle
 
         private void pbEnviar_Click_1(object sender, EventArgs e)
         {
-            Insert();
+
+            DialogResult dialogResult = MessageBox.Show("Você deseja inserir essa NFE?", "Enviar", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Insert();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            PopulationXMLCH();
+            this.Refresh();
         }
     }
 }

@@ -266,9 +266,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
+          //  this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+         //   this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+         //   this.MaximizeBox = false;
             this.Name = "Perfil";
             this.Text = "Perfil";
             this.Load += new System.EventHandler(this.Perfil_Load);

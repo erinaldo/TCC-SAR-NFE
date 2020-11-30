@@ -11,9 +11,10 @@ using MySql.Data.MySqlClient;
 
 namespace Tingle
 {
-    public partial class Perfil : Form
+    public partial class Perfil : UserControl
     {
         private int codigo;
+        private int s;
         private DataTable dt = new DataTable();
         MySqlDataAdapter adapter;
         MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;user id=root; password =;database=historico; Convert Zero Datetime=True");
@@ -22,6 +23,7 @@ namespace Tingle
         {
             InitializeComponent();
             this.codigo = codigo;
+            s = codigo;
         }
 
         private void Consulta()
@@ -29,7 +31,7 @@ namespace Tingle
             //Connection con = new Connection();
            // con.Open();
 
-            adapter = new MySqlDataAdapter("SELECT * FROM funcionario WHERE cod_fun = '" + codigo + "'", connection);
+            adapter = new MySqlDataAdapter("SELECT * FROM funcionario WHERE cod_fun = '" + s + "'", connection);
             adapter.Fill(dt);
 
             lblNome.Text = dt.Rows[0][1].ToString();
@@ -70,7 +72,7 @@ namespace Tingle
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+         //   this.Close();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -85,7 +87,7 @@ namespace Tingle
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Close();
+           // this.Close();
         }
 
         private void label3_Click_1(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,16 +8,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tingle.Forms;
+using static Tingle.ChaveAcesso;
 
 namespace Tingle
 {
     public partial class Inicial : Form
     {
+        public static Panel painel;
+
+        NFeWS notas;
+        BindingSource produtos;
+
+        private int s;
+
+
         public Inicial(int codigo)
         {
             InitializeComponent();
             costumizeDesign(); 
             this.codigo = codigo;
+            s = codigo;
+            painel = panelChildForm;
         }
 
         private void costumizeDesign()
@@ -53,7 +66,9 @@ namespace Tingle
         {
             hideSubMenu();
 
-            openChildForm(new NFe(this.codigo));
+            //Inicial.painel.Controls.Clear();
+            //Inicial.painel.Controls.Add(new NFe(codigo, notas, produtos));
+             openChildForm(new NFe(this.codigo, notas, produtos));
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -61,13 +76,17 @@ namespace Tingle
             
             hideSubMenu();
 
-            openChildForm(new Histórico(this.codigo));
+            Inicial.painel.Controls.Clear();
+            Inicial.painel.Controls.Add(new Histórico(this.codigo));
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             hideSubMenu();
             openChildForm(new ChaveAcesso(this.codigo));
+
+            //   Inicial.painel.Controls.Clear();
+            //  Inicial.painel.Controls.Add(new ChaveAcesso(this.codigo));
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -89,11 +108,46 @@ namespace Tingle
             newForm.Show();
         }
 
+        private void login()
+        {
+            Connection con = new Connection();
+
+            con.Open();
+            string query = "SELECT cargo, cod_fun FROM funcionario WHERE cod_fun ='" + s + "'";
+            MySqlDataReader row;
+            row = con.ExecuteReader(query);
+            if (row.HasRows)
+            {
+                while (row.Read())
+                {
+                    cargo = row["cargo"].ToString();
+                    codigo = Convert.ToInt32(row["cod_fun"]);
+
+                }
+            }
+
+            if(cargo == "Gerente")
+            {
+                Inicial.painel.Controls.Clear();
+                Inicial.painel.Controls.Add(new PerfilG(this.codigo));
+            }
+
+            else
+            {
+                Inicial.painel.Controls.Clear();
+                Inicial.painel.Controls.Add(new Perfil(this.codigo));
+
+            }
+
+            con.Close();
+        }
+
         private void button7_Click(object sender, EventArgs e)
         {
             hideSubMenu();
 
-            openChildForm(new Perfil(this.codigo));
+            login();
+            //openChildForm(new Perfil(this.codigo));
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -131,10 +185,11 @@ namespace Tingle
 
         }
 
-        private Form activeForm = null;
+        private static Form activeForm = null;
         private int codigo;
+        private string cargo;
 
-        private void openChildForm(Form childForm)
+        public static void openChildForm(Form childForm)
         {
             if (activeForm != null)
                 activeForm.Close();
@@ -142,8 +197,8 @@ namespace Tingle
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            panelChildForm.Controls.Add(childForm);
-            panelChildForm.Tag = childForm;
+            painel.Controls.Add(childForm);
+            painel.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
         }
@@ -162,6 +217,8 @@ namespace Tingle
         {
 
         }
+
+
     }
       
 

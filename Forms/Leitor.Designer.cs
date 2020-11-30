@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NFe));
             this.label63 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
             this.pbInserir = new System.Windows.Forms.PictureBox();
@@ -157,6 +156,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.IdentificaçãoEmitentetxt = new System.Windows.Forms.TextBox();
             this.pbVoltar = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbInserir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnviar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProd)).BeginInit();
@@ -186,10 +186,10 @@
             // pbInserir
             // 
             this.pbInserir.BackColor = System.Drawing.Color.Transparent;
-            this.pbInserir.Location = new System.Drawing.Point(627, 25);
+            this.pbInserir.Location = new System.Drawing.Point(665, 28);
             this.pbInserir.Name = "pbInserir";
-            this.pbInserir.Size = new System.Drawing.Size(183, 59);
-            this.pbInserir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbInserir.Size = new System.Drawing.Size(126, 43);
+            this.pbInserir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbInserir.TabIndex = 400;
             this.pbInserir.TabStop = false;
             this.pbInserir.Click += new System.EventHandler(this.pbInserir_Click_1);
@@ -199,10 +199,10 @@
             // pbEnviar
             // 
             this.pbEnviar.BackColor = System.Drawing.Color.Transparent;
-            this.pbEnviar.Location = new System.Drawing.Point(823, 25);
+            this.pbEnviar.Location = new System.Drawing.Point(837, 28);
             this.pbEnviar.Name = "pbEnviar";
-            this.pbEnviar.Size = new System.Drawing.Size(182, 57);
-            this.pbEnviar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbEnviar.Size = new System.Drawing.Size(126, 43);
+            this.pbEnviar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbEnviar.TabIndex = 399;
             this.pbEnviar.TabStop = false;
             this.pbEnviar.Click += new System.EventHandler(this.pbEnviar_Click_1);
@@ -1453,13 +1453,24 @@
             this.pbVoltar.TabStop = false;
             this.pbVoltar.Click += new System.EventHandler(this.pbVoltar_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(11, 88);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(31, 23);
+            this.button1.TabIndex = 404;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // NFe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1045, 750);
+            this.ClientSize = new System.Drawing.Size(1045, 749);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label63);
             this.Controls.Add(this.label62);
             this.Controls.Add(this.pbInserir);
@@ -1588,10 +1599,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.IdentificaçãoEmitentetxt);
             this.Controls.Add(this.pbVoltar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NFe";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Anexar Arquivos";
             this.Load += new System.EventHandler(this.NFe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbInserir)).EndInit();
@@ -1733,5 +1741,6 @@
         private System.Windows.Forms.Label label1;
         protected System.Windows.Forms.TextBox IdentificaçãoEmitentetxt;
         private System.Windows.Forms.PictureBox pbVoltar;
+        private System.Windows.Forms.Button button1;
     }
 }

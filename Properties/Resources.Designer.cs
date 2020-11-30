@@ -113,6 +113,26 @@ namespace Tingle.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btExportar {
+            get {
+                object obj = ResourceManager.GetObject("btExportar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btExportarE {
+            get {
+                object obj = ResourceManager.GetObject("btExportarE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cargo {
             get {
                 object obj = ResourceManager.GetObject("Cargo", resourceCulture);
@@ -213,6 +233,36 @@ namespace Tingle.Properties {
         internal static System.Drawing.Bitmap Lock2 {
             get {
                 object obj = ResourceManager.GetObject("Lock2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ok {
+            get {
+                object obj = ResourceManager.GetObject("Ok", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OkE {
+            get {
+                object obj = ResourceManager.GetObject("OkE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap txtChave {
+            get {
+                object obj = ResourceManager.GetObject("txtChave", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

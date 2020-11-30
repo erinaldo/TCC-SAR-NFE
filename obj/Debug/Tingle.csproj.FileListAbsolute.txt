@@ -147,3 +147,81 @@ C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\obj\Debug\Tingle.csproj.CopyComplete
 C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\obj\Debug\Tingle.exe
 C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\obj\Debug\Tingle.pdb
 C:\Users\Bruno\Desktop\Nova pasta (2)\ssad\obj\Debug\Tingle.ChaveAcesso.resources
+C:\Users\Renan\Desktop\Programa1611\bduaart\ssad\bin\Debug\Tingle.exe.config
+C:\Users\Renan\Desktop\Programa1611\bduaart\ssad\bin\Debug\Tingle.exe
+C:\Users\Renan\Desktop\Programa1611\bduaart\ssad\bin\Debug\Tingle.pdb
+C:\Users\Renan\Desktop\Programa1611\bduaart\ssad\bin\Debug\MySql.Data.dll
+C:\Users\Renan\Desktop\Programa1611\bduaart\ssad\obj\Debug\Tingle.csprojAssemblyReference.cache
+C:\Users\Renan\Desktop\Programa1611\bduaart\ssad\obj\Debug\Tingle.ChaveAcesso.resources
+C:\Users\Renan\Desktop\Programa1611\bduaart\ssad\obj\Debug\Tingle.Inicial.resources
+C:\Users\Renan\Desktop\Programa1611\bduaart\ssad\obj\Debug\Tingle.NFe.resources
+C:\Users\Renan\Desktop\Programa1611\bduaart\ssad\obj\Debug\Tingle.Histórico.resources
+C:\Users\Renan\Desktop\Programa1611\bduaart\ssad\obj\Debug\Tingle.Perfil.resources
+C:\Users\Renan\Desktop\Programa1611\bduaart\ssad\obj\Debug\Tingle.Login.resources
+C:\Users\Renan\Desktop\Programa1611\bduaart\ssad\obj\Debug\Tingle.Registro.resources
+C:\Users\Renan\Desktop\Programa1611\bduaart\ssad\obj\Debug\Tingle.Properties.Resources.resources
+C:\Users\Renan\Desktop\Programa1611\bduaart\ssad\obj\Debug\Tingle.csproj.GenerateResource.cache
+C:\Users\Renan\Desktop\Programa1611\bduaart\ssad\obj\Debug\Tingle.csproj.CoreCompileInputs.cache
+C:\Users\Renan\Desktop\Programa1611\bduaart\ssad\obj\Debug\Tingle.csproj.CopyComplete
+C:\Users\Renan\Desktop\Programa1611\bduaart\ssad\obj\Debug\Tingle.exe
+C:\Users\Renan\Desktop\Programa1611\bduaart\ssad\obj\Debug\Tingle.pdb
+C:\Users\Renan\Desktop\Teste exel\bduaart\ssad\bin\Debug\Tingle.exe.config
+C:\Users\Renan\Desktop\Teste exel\bduaart\ssad\bin\Debug\Tingle.exe
+C:\Users\Renan\Desktop\Teste exel\bduaart\ssad\bin\Debug\Tingle.pdb
+C:\Users\Renan\Desktop\Teste exel\bduaart\ssad\bin\Debug\MySql.Data.dll
+C:\Users\Renan\Desktop\Teste exel\bduaart\ssad\obj\Debug\Tingle.csprojAssemblyReference.cache
+C:\Users\Renan\Desktop\Teste exel\bduaart\ssad\obj\Debug\Tingle.ChaveAcesso.resources
+C:\Users\Renan\Desktop\Teste exel\bduaart\ssad\obj\Debug\Tingle.Inicial.resources
+C:\Users\Renan\Desktop\Teste exel\bduaart\ssad\obj\Debug\Tingle.NFe.resources
+C:\Users\Renan\Desktop\Teste exel\bduaart\ssad\obj\Debug\Tingle.Histórico.resources
+C:\Users\Renan\Desktop\Teste exel\bduaart\ssad\obj\Debug\Tingle.Perfil.resources
+C:\Users\Renan\Desktop\Teste exel\bduaart\ssad\obj\Debug\Tingle.Login.resources
+C:\Users\Renan\Desktop\Teste exel\bduaart\ssad\obj\Debug\Tingle.Registro.resources
+C:\Users\Renan\Desktop\Teste exel\bduaart\ssad\obj\Debug\Tingle.Properties.Resources.resources
+C:\Users\Renan\Desktop\Teste exel\bduaart\ssad\obj\Debug\Tingle.csproj.GenerateResource.cache
+C:\Users\Renan\Desktop\Teste exel\bduaart\ssad\obj\Debug\Tingle.csproj.CoreCompileInputs.cache
+C:\Users\Renan\Desktop\Teste exel\bduaart\ssad\obj\Debug\Tingle.csproj.CopyComplete
+C:\Users\Renan\Desktop\Teste exel\bduaart\ssad\obj\Debug\Tingle.exe
+C:\Users\Renan\Desktop\Teste exel\bduaart\ssad\obj\Debug\Tingle.pdb
+C:\Users\Bruno\Desktop\ssad\obj\Debug\Tingle.csprojAssemblyReference.cache
+C:\Users\Bruno\Desktop\ssad\obj\Debug\Tingle.ChaveAcesso.resources
+C:\Users\Bruno\Desktop\ssad\obj\Debug\Tingle.Inicial.resources
+C:\Users\Bruno\Desktop\ssad\obj\Debug\Tingle.NFe.resources
+C:\Users\Bruno\Desktop\ssad\obj\Debug\Tingle.Histórico.resources
+C:\Users\Bruno\Desktop\ssad\obj\Debug\Tingle.Perfil.resources
+C:\Users\Bruno\Desktop\ssad\obj\Debug\Tingle.Login.resources
+C:\Users\Bruno\Desktop\ssad\obj\Debug\Tingle.Registro.resources
+C:\Users\Bruno\Desktop\ssad\obj\Debug\Tingle.Properties.Resources.resources
+C:\Users\Bruno\Desktop\ssad\obj\Debug\Tingle.csproj.GenerateResource.cache
+C:\Users\Bruno\Desktop\ssad\obj\Debug\Tingle.csproj.CoreCompileInputs.cache
+C:\Users\Bruno\Desktop\ssad\obj\Debug\Tingle.exe
+C:\Users\Bruno\Desktop\ssad\obj\Debug\Tingle.pdb
+C:\Users\Bruno\Desktop\ssad\bin\Debug\Tingle.exe.config
+C:\Users\Bruno\Desktop\ssad\bin\Debug\Tingle.exe
+C:\Users\Bruno\Desktop\ssad\bin\Debug\Tingle.pdb
+C:\Users\Bruno\Desktop\ssad\bin\Debug\MySql.Data.dll
+C:\Users\Bruno\Desktop\ssad\obj\Debug\Tingle.csproj.CopyComplete
+C:\Users\Bruno\Desktop\ssad\obj\Debug\Tingle.Forms.PerfilG.resources
+C:\Users\Bruno\Desktop\ssad\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Bruno\Desktop\ssad\obj\Debug\Tingle.Forms.UserControl1.resources
+C:\Users\User\Desktop\a\ssad\bin\Debug\Tingle.exe.config
+C:\Users\User\Desktop\a\ssad\bin\Debug\Tingle.exe
+C:\Users\User\Desktop\a\ssad\bin\Debug\Tingle.pdb
+C:\Users\User\Desktop\a\ssad\bin\Debug\MySql.Data.dll
+C:\Users\User\Desktop\a\ssad\bin\Debug\Newtonsoft.Json.dll
+C:\Users\User\Desktop\a\ssad\obj\Debug\Tingle.csprojAssemblyReference.cache
+C:\Users\User\Desktop\a\ssad\obj\Debug\Tingle.ChaveAcesso.resources
+C:\Users\User\Desktop\a\ssad\obj\Debug\Tingle.Inicial.resources
+C:\Users\User\Desktop\a\ssad\obj\Debug\Tingle.NFe.resources
+C:\Users\User\Desktop\a\ssad\obj\Debug\Tingle.Histórico.resources
+C:\Users\User\Desktop\a\ssad\obj\Debug\Tingle.Perfil.resources
+C:\Users\User\Desktop\a\ssad\obj\Debug\Tingle.Login.resources
+C:\Users\User\Desktop\a\ssad\obj\Debug\Tingle.Registro.resources
+C:\Users\User\Desktop\a\ssad\obj\Debug\Tingle.Forms.PerfilG.resources
+C:\Users\User\Desktop\a\ssad\obj\Debug\Tingle.Forms.UserControl1.resources
+C:\Users\User\Desktop\a\ssad\obj\Debug\Tingle.Properties.Resources.resources
+C:\Users\User\Desktop\a\ssad\obj\Debug\Tingle.csproj.GenerateResource.cache
+C:\Users\User\Desktop\a\ssad\obj\Debug\Tingle.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\a\ssad\obj\Debug\Tingle.csproj.CopyComplete
+C:\Users\User\Desktop\a\ssad\obj\Debug\Tingle.exe
+C:\Users\User\Desktop\a\ssad\obj\Debug\Tingle.pdb

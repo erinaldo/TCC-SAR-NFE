@@ -71,12 +71,12 @@ namespace Tingle
         //DESIGN FORM
         private void button2_Click(object sender, EventArgs e)
         {
-            var newForm = new Login();
-            newForm.Show();
+            Login login = new Login();
+            login.Show();
             this.Hide();
 
-            newForm.FormClosed += (s, args) => this.Close();
-            newForm.Show();
+            login.FormClosed += (s, args) => this.Close();
+            login.Show();
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)

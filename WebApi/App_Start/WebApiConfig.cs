@@ -1,0 +1,35 @@
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Http;
+
+namespace WebApi
+{
+    public static class WebApiConfig
+    {
+        public static void Register(HttpConfiguration config)
+        {
+            // Serviços e configuração da API da Web
+
+            // Rotas da API da Web
+            config.MapHttpAttributeRoutes();
+
+            config.Routes.MapHttpRoute(
+                name: "DefaultApi",
+                routeTemplate: "api/{controller}/{id}",
+                defaults: new { id = RouteParameter.Optional }
+            );
+
+            var formatters = GlobalConfiguration.Configuration.Formatters;
+            formatters.Remove(formatters.XmlFormatter);
+        }
+
+       public static MySqlConnection conn()
+        {
+            string conn_string = "server=localhost;port=3306;user id=root; password =;database=historico; Convert Zero Datetime=True";
+            MySqlConnection conn = new MySqlConnection(conn_string);
+            return conn;
+        }
+    }
+}

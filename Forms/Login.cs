@@ -55,6 +55,13 @@ namespace Tingle
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Registro registro = new Registro();
+            registro.Show();
+            this.Hide();
+
+            registro.FormClosed += (s, args) => this.Close();
+            registro.Show();
+
             var newForm = new Registro();
             newForm.Show();
             this.Hide();
